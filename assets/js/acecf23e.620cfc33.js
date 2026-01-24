@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunksoft_kitty_docs=globalThis.webpackChunksoft_kitty_docs||[]).push([[1903],{1912(t){t.exports=JSON.parse('{"blogBasePath":"/Soft-Kitty-Documentation/blog","blogTitle":"Blog","authorsListPath":"/Soft-Kitty-Documentation/blog/authors"}')}}]);
