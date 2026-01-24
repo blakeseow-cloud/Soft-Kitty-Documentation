@@ -1,89 +1,79 @@
-Master Combat Core – Visual Node Graph Framework
+##Overview
 
-Master Combat Core is a powerful, data-driven combat framework designed to help developers build complex, scalable combat systems using an intuitive visual node graph.
+Soft Kitty is a collection of professional Unity tools designed to help developers build high-quality games efficiently—without getting buried in low-level implementation details.
 
-Instead of hard-coding combat logic, you design it visually: connect conditions, triggers, math, and actions to create flexible combat behaviors that are easy to understand, debug, and extend.The system is built with performance and architecture in mind, making it suitable for both small indie projects and large, complex games.
+The goal of Soft Kitty is simple:
+let developers focus on game design and creativity, while the framework handles the heavy lifting.
 
-Whether you are a beginner looking to build an advanced combat system quickly, or an experienced developer aiming to speed up iteration and maintain clean code, Master Combat Core is designed to fit naturally into your workflow.
+---
 
-Designed with a Data-Driven Mindset
-At the core of the framework is a strict separation between data and behavior:
-Combat logic lives in Graph Objects (ScriptableObjects)
-Runtime execution uses lightweight Graph Instances
-Entities and attributes exist independently from scene objects
-No per-frame ticking or hidden update loops
-This means combat can be simulated, tested, and executed without relying on scene presence, while still integrating cleanly with GameObjects for presentation, animation, and effects.
+##Philosophy
+Modern game development demands both speed and quality. However, achieving polished results in Unity often requires deep engine knowledge, extensive custom tooling, and years of experience across multiple disciplines.
 
-Visual Node Graph Combat Logic
-The visual graph editor allows you to build combat logic using:
-Condition Nodes (attribute checks, comparisons, raycasts, tags, etc.)
-Trigger Nodes (group conditions, caching, reset logic)
-Action Nodes (damage, effects, animations, stat changes, messages)
-Math & Variable Nodes (calculations, dynamic runtime values)
-Branch Nodes (logic flow control)
-Entity Nodes (Player, Dealer, Target, Instance entities)
-Graphs are fast to iterate, easy to debug, and fully reusable across characters, enemies, and effects.
+Soft Kitty is built to close that gap.
 
+Every system is designed with:
 
-Flexible Entity & Attribute System
-Combat data is driven by a robust entity system:
-Centralized Entity Manager
-Upgrade scalingAttribute system with:
-Base values
-Time-based temporary modifiers
+- Item Clear structure and predictable behavior
 
-Timestamp-based evaluation (no ticking)
-Attributes are evaluated only when accessed, making the system extremely efficient and safe to scale.
+- Item Production-ready workflows
 
+- Item Strong editor tooling and visual feedback
 
-Graph-Driven Damage & Effects
-Damage, buffs, and debuffs are all graph-based:
-Combat Damage Component for physics-based damage execution
-Over-Time Effect (DoT & Buff) Graphs
-Stackable effects, duration control, and expiration logic
-No hard-coded effect behavior
-Designers can create complex effects such as poison, freeze, lifesteal, critical hits, reflection, and invincibility entirely through graphs.
+- Item Performance-conscious runtime design
 
+The result is a set of tools that feel approachable for new developers, yet powerful and flexible enough for experienced teams.
 
-High Performance by Design
-Master Combat Core is built for runtime efficiency:
-Resolve-once, execute-many architecture
-Direct node references at runtime
-Cached graph evaluation results
-No per-frame updates
-No string-based lookups during gameplay
-Even complex damage graphs execute efficiently and scale well with large numbers of entities.
+---
 
+##A Modular, Unified Ecosystem
+Soft Kitty is not a collection of isolated assets. It is an ecosystem.
 
-Extensible & Developer-Friendly
-The framework is designed to be extended:
-Developers can create custom node types
-Built-in tools generate base class and interface code
-Custom logic plugs directly into the graph editor
-Clean APIs for runtime control
-Advanced users can extend core behavior via custom root nodes and GraphInstance subclasses.
+Each package is designed to:
 
+- Item Work independently when needed
 
-Included Full Roguelike Demo
-The package includes a fully playable roguelike combat demo showcasing:
-AI-driven enemies with scalable difficulty
-Attribute-based leveling and progression
-Loot, buffs, debuffs, and weapon enchantments
-Graph-driven combat logic in real gameplay scenarios
-This demo serves as both a learning resource and a real-world example of how the system scales.
+- Item Integrate cleanly with other Soft Kitty systems
 
+- Item Share consistent concepts, data structures, and workflows
 
-Documentation & Community
-Comprehensive online documentation
-Step-by-step guides and examples
-A dedicated community forum (link provided separately)
-Designed to be easy to learn and powerful to master
+As your project grows, Soft Kitty grows with it—scaling from small prototypes to complex, feature-rich games without forcing rewrites or architectural changes.
 
+---
 
-Who Is This For?
-Developers who want a visual combat system
-Teams aiming for fast iteration and clean architecture
-Designers who prefer working without writing gameplay code
-Advanced developers who need performance and extensibility
+##Built From Real Production Experience
+Soft Kitty is shaped by long-term, hands-on experience across:
 
-Master Combat Core – Visual Node Graph Framework gives you the freedom to design advanced combat systems visually, without sacrificing performance, structure, or control.
+- Item Programming
+
+- Item Technical art
+
+- Item Game art
+
+- Item Tool development
+
+- Item Performance optimization
+
+This cross-disciplinary background influences every design decision—from API structure to editor UX—ensuring the tools solve real production problems, not just theoretical ones.
+
+---
+
+##What You’ll Find in This Documentation
+This documentation serves as the central reference for the Soft Kitty ecosystem, including:
+
+- Item Core shared systems (Entities, Attributes, Over-Time Effects, etc.)
+
+- Item Package-specific documentation
+
+- Item Concept explanations and best practices
+
+- Item PI references embedded directly within each system
+
+- Item Guides for extending and customizing the framework
+
+Each section is structured to be readable independently, while still fitting into the larger whole—much like the Unity Manual itself.
+
+---
+
+##Looking Ahead
+Soft Kitty is actively evolving. New systems, deeper integrations, and expanded tooling will continue to build toward a cohesive, professional-grade framework for Unity development.
