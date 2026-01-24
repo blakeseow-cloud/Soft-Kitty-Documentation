@@ -6,7 +6,6 @@ Instead of hard-coding combat logic, you design it visually: connect conditions,
 
 Whether you are a beginner looking to build an advanced combat system quickly, or an experienced developer aiming to speed up iteration and maintain clean code, Master Combat Core is designed to fit naturally into your workflow.
 
-
 Designed with a Data-Driven Mindset
 At the core of the framework is a strict separation between data and behavior:
 Combat logic lives in Graph Objects (ScriptableObjects)
@@ -14,7 +13,6 @@ Runtime execution uses lightweight Graph Instances
 Entities and attributes exist independently from scene objects
 No per-frame ticking or hidden update loops
 This means combat can be simulated, tested, and executed without relying on scene presence, while still integrating cleanly with GameObjects for presentation, animation, and effects.
-
 
 Visual Node Graph Combat Logic
 The visual graph editor allows you to build combat logic using:
