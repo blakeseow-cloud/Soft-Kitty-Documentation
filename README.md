@@ -1,4 +1,4 @@
-##Overview
+## Overview
 
 Soft Kitty is a collection of professional Unity tools designed to help developers build high-quality games efficiently—without getting buried in low-level implementation details.
 
@@ -7,7 +7,7 @@ let developers focus on game design and creativity, while the framework handles 
 
 ---
 
-##Philosophy
+## Philosophy
 Modern game development demands both speed and quality. However, achieving polished results in Unity often requires deep engine knowledge, extensive custom tooling, and years of experience across multiple disciplines.
 
 Soft Kitty is built to close that gap.
@@ -26,7 +26,7 @@ The result is a set of tools that feel approachable for new developers, yet powe
 
 ---
 
-##A Modular, Unified Ecosystem
+## A Modular, Unified Ecosystem
 Soft Kitty is not a collection of isolated assets. It is an ecosystem.
 
 Each package is designed to:
@@ -41,7 +41,7 @@ As your project grows, Soft Kitty grows with it—scaling from small prototypes 
 
 ---
 
-##Built From Real Production Experience
+## Built From Real Production Experience
 Soft Kitty is shaped by long-term, hands-on experience across:
 
 - Item Programming
@@ -58,7 +58,7 @@ This cross-disciplinary background influences every design decision—from API s
 
 ---
 
-##What You’ll Find in This Documentation
+## What You’ll Find in This Documentation
 This documentation serves as the central reference for the Soft Kitty ecosystem, including:
 
 - Item Core shared systems (Entities, Attributes, Over-Time Effects, etc.)
@@ -75,5 +75,5 @@ Each section is structured to be readable independently, while still fitting int
 
 ---
 
-##Looking Ahead
+## Looking Ahead
 Soft Kitty is actively evolving. New systems, deeper integrations, and expanded tooling will continue to build toward a cohesive, professional-grade framework for Unity development.
