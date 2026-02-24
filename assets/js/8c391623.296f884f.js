@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunksoft_kitty_docs=globalThis.webpackChunksoft_kitty_docs||[]).push([[640],{5550(t){t.exports=JSON.parse('{"metadata":{"permalink":"/Soft-Kitty-Documentation/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
