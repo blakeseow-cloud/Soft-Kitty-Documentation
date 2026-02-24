@@ -1,4 +1,7 @@
-# Soft Kitty Overview
+---
+title: Overview
+---
+## Soft Kitty Overview
 
 **Soft Kitty** is a collection of professional Unity tools designed to help developers build high-quality games efficiently—without getting buried in low-level implementation details.
 

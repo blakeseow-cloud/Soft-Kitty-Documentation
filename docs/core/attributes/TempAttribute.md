@@ -2,12 +2,12 @@
 title: TempAttribute
 ---
 ```csharp
-class TempAttribute
+class SoftKitty.TempAttribute
 ```
 
 `TempAttribute` represents time-based modifiers applied to attributes, such as buffs or debuffs.
 
-
+---
 
 ### Properties
 
@@ -47,3 +47,4 @@ The math function used to apply this value:
 Returns the merged result of the base value and the temporary modifier.
 
 ---
+
