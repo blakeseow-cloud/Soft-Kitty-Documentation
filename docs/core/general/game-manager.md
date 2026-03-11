@@ -31,23 +31,6 @@ Same as above, but for over-time effects settings.
 
 ---
 
-### Master Inventory Engine Properties
-
-#### `public static `[ItemObject]` ItemData`
-Returns the Item Data Object. It returns a copy in memory during runtime and links to the actual ScriptableObject in editor mode.
-
----
-
-#### `public static InventoryEngine.`[InventoryData]` PlayerInventoryData`
-Retrieve the [InventoryData] class for player's invetory.
-
----
-
-#### `public static InventoryEngine.`[InventoryData]` PlayerEquipmentData`
-Retrieve the [InventoryData] class for player's equipments.
-
----
-
 ### Methods
 
 #### `public static void DeleteAllEntityInstance()`
@@ -110,13 +93,6 @@ Retrieves the over-time effect by its integer ID.
 
 ---
 
-### Master Inventory Engine Methods
-
-#### `public static InventoryEngine.LootPack DropLootPack(Vector3 _pos, string _uid)`
-Drop a [Loot Pack] at the providing position via the unique string id..
-
----
-
 ### Convenience Utility Methods
 
 #### `public static GameObject InstantiateGameObject(GameObject original, Transform parent, Vector3 position, Vector3 eulerAngles, Vector3 scale)`
@@ -140,6 +116,8 @@ Plays a 3D sound at the specified volume and position.
 ---
 
 <!-- API LINKS -->
+[InventoryModule]: /docs/master-inventory-engine/inventory-module
+[EntityModule]: /docs/core/entities/EntityModule
 [Loot Pack]:/docs/master-inventory-engine/item-class/loot-pack
 [Item Database Settings]:/docs/master-inventory-engine/settings
 [ItemChangeCallback]:/docs/master-inventory-engine/callbacks

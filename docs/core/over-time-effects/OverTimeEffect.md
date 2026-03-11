@@ -70,14 +70,54 @@ Frame or border color used in UI.
 
 ---
 
-#### [GraphObject] `DesignGraph` 
+#### `GraphBase DesignGraph` 
 (`When Master Combat Core is installed`)
-Defines the behavior of the effect using the visual graph system.
+Defines the behavior of the effect using the [GraphObject].
 
 This graph controls:
 - Tick logic
 - Scaling
 - Conditional behavior
+
+(`When Master Combat Core is not installed`)
+A ScriptableObject to attach to the over time effect.
+
+- Custom runtime logic can be implement into this ScriptableObject. Example:
+  
+```csharp
+    EffectLogic _logic = (EffectLogic)GameManager.GetOverTimeEffect(_uid).DesignGraph;
+```
+
+- Custom inspector ui can be implement via:
+  
+```csharp
+public interface IOverTimeEffectInspectorModule { 
+    bool DrawInspector(OverTimeEffectObject myTarget, int i); 
+}
+```
+
+Example Code:
+
+```csharp
+public class CombatOverTimeInspectorModule : IOverTimeEffectInspectorModule
+{
+    public bool DrawInspector(OverTimeEffectObject myTarget, int i)
+    {
+          myTarget.overTimeEffects[i].DesignGraph = (GraphObject)EditorGUILayout.ObjectField(myTarget.overTimeEffects[i].DesignGraph, typeof(GraphObject), false);
+          ...
+    }
+}
+
+
+[InitializeOnLoad]
+public static class OverTimeEffectInspectorRegister
+{
+    static OverTimeEffectInspectorRegister()
+    {
+         OverTimeEffectInspectorRegistry.Register(new CombatOverTimeInspectorModule());
+    }
+}
+```
 
 ---
 
@@ -113,6 +153,8 @@ Useful for attaching:
 ---
 
 <!-- API LINKS -->
+[InventoryModule]: /docs/master-inventory-engine/inventory-module
+[EntityModule]: /docs/core/entities/EntityModule
 [Loot Pack]:/docs/master-inventory-engine/item-class/loot-pack
 [Item Database Settings]:/docs/master-inventory-engine/settings
 [ItemChangeCallback]:/docs/master-inventory-engine/callbacks

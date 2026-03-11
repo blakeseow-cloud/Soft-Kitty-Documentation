@@ -305,36 +305,17 @@ Returns whether the [Entity] is available for interaction.
 
 ---
 
-### Master Inventory Engine Methods
-
-#### `public InventoryEngine.`[InventoryData]` GetAnyInventoryData()`
-Retrieve any exitsing [InventoryData] of this [Entity] when available.
+#### `public T GetModule<T>() where T : `[EntityModule]
+Retrieve an extension [EntityModule] by its type.
 
 ---
 
-#### `public InventoryEngine.`[InventoryData]` GetEquipment()`
-Retrieve any exitsing Equipment type [InventoryData] of this [Entity] when available.
-
----
-
-#### `public InventoryEngine.`[InventoryData]` GetInventory()`
-Retrieve any exitsing Inventory|Crate type [InventoryData] of this [Entity] when available.
-
----
-
-#### `public InventoryEngine.`[InventoryData]` GetInventoryDataByType(InventoryEngine.`[InventoryData]`.HolderType _type)`
-Retrieve specified type [InventoryData] of this [Entity] when available.
-
----
-
-#### `public InventoryEngine.LootPack DropLootPack(int _index = -1)`
-Drop a [Loot Pack] this [Entity] carries, pass an index number for drop a specified pack from the list, otherwise it will random pick one.
-
----
 
 [attribute]: /docs/core/attributes/AttributeData
 
 <!-- API LINKS -->
+[InventoryModule]: /docs/master-inventory-engine/inventory-module
+[EntityModule]: /docs/core/entities/EntityModule
 [Loot Pack]:/docs/master-inventory-engine/item-class/loot-pack
 [Item Database Settings]:/docs/master-inventory-engine/settings
 [ItemChangeCallback]:/docs/master-inventory-engine/callbacks

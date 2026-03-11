@@ -2,6 +2,10 @@
 title: GraphObject
 ---
 
+```csharp
+class GraphObject : GraphBase
+```
+
 A **GraphObject** is a reusable `ScriptableObject` that defines combat and gameplay logic using a node-based graph.
 
 You can create a **GraphObject** by right-clicking in the Project Window:
@@ -152,6 +156,8 @@ This makes GraphObjects truly **reusable**, **portable**, and **community-friend
 ---
 
 <!-- API LINKS -->
+[InventoryModule]: /docs/master-inventory-engine/inventory-module
+[EntityModule]: /docs/core/entities/EntityModule
 [Loot Pack]:/docs/master-inventory-engine/item-class/loot-pack
 [Item Database Settings]:/docs/master-inventory-engine/settings
 [ItemChangeCallback]:/docs/master-inventory-engine/callbacks

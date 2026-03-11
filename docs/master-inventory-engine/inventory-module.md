@@ -1,77 +1,82 @@
 ---
-title: CombatDamage
+title: Inventory Module
 ---
-```csharp
-class SoftKitty.CombatDamage : GraphInstance
-```
-[GraphInstance] / CombatDamage
- 
 
-`CombatDamage` inherits from [GraphInstance] and adds specific functionality for handling damage detection and dealing damage in combat scenarios.
+```csharp
+class SoftKitty..InventoryEngine.InventoryModule : EntityModule
+```
+
+
+InventoryModule is an [EntityModule] extension that provides inventory functionality to an Entity.
+
+It manages the storage and manipulation of [item]s, allowing an [entity] to carry, add, remove, and query [item]s during gameplay. The module integrates with the Master Inventory Engine Pro and handles all item-related data associated with the [entity].
+
+Because it is implemented as an [EntityModule], the inventory system is fully optional and modular. [Entitie]s only contain inventory functionality when this module is present, allowing projects to include or exclude the inventory system without affecting the core [entity] architecture.
+
+Typical use cases include:
+
+- Player inventories/equipment
+
+- NPC inventories/equipment
+
+- Loot containers
+
+- Item trading systems
+
+The module also participates in the [entity] save/load process and runtime initialization, ensuring inventory data persists correctly across game sessions.
+
+**To retrieve the InventoryModule** from an [Entity], use:
+
+```csharp
+mEntity.GetModule<InventoryModule>();
+```
+
+---
+
+### Properties
+
+#### `public List<`[InventoryData]`> Inventory `
+List of the inventories.
+
+#### `public List<string> LootPacks`
+List of the [loot pack] uid.
 
 ---
 
 ### Methods
-#### `public void SetEnable(bool _enable)`
-Enables or disables damage detection.
+
+#### `public InventoryEngine.`[InventoryData]` GetAnyInventoryData()`
+Retrieve any exitsing [InventoryData] of this [Entity] when available.
 
 ---
 
-#### `public void SetEnable(float _autoDisableAfterSeconds)`
-Enables damage detection and automatically disables it after a specified number of seconds.
-
----
-#### `public void Launch()`
-Launch the projectile to its current forward direction. The damage detection will be enabled in the same time.
+#### `public InventoryEngine.`[InventoryData]` GetEquipment()`
+Retrieve any exitsing Equipment type [InventoryData] of this [Entity] when available.
 
 ---
 
-#### `public void Launch(Vector3 _direction)`
-Launch the projectile to the specified direction. The damage detection will be enabled in the same time.
+#### `public InventoryEngine.`[InventoryData]` GetInventory()`
+Retrieve any exitsing Inventory|Crate type [InventoryData] of this [Entity] when available.
 
 ---
 
-#### `public void PhysicsCast()`
-Perform a Physics detection for Raycast|SphereCast|Overlap_Sphere|Overlap_Capsule
+#### `public InventoryEngine.`[InventoryData]` GetInventoryDataByType(InventoryEngine.`[InventoryData]`.HolderType _type)`
+Retrieve specified type [InventoryData] of this [Entity] when available.
 
 ---
 
-#### `public override void SetDynamicValue(string _uid, float _value)`
-Sets a dynamic variable in the visual graph object by its unique UID.
+#### `public InventoryEngine.LootPack DropLootPack(int _index = -1)`
+Drop a [Loot Pack] this [Entity] carries, pass an index number for drop a specified pack from the list, otherwise it will random pick one.
 
 ---
 
-#### `public void DealDamage()`
-Manually triggers the damage calculation. Triggers are included in the calculation.
+
+
+
 
 ---
 
-#### `public void DealDamage(`[Entity]` _target)`
-Manually deals damage to the provided target. Triggers are included in the calculation.
-
----
-
-#### `public void DealDamage(`[Entity]` _dealer, `[Entity]` _target)`
-Manually deals damage to the provided target with the provided dealer. Triggers are included in the calculation.
-
----
-
-#### `public void PerformAction(int _hash)`
-Ignores all triggers and directly performs all actions. An integer hash is required for caching the result.
-
----
-
-#### `public bool isTriggered(int _hash)`
-Returns whether all trigger nodes are triggered. An integer hash is required for caching the result.
-
----
-
-#### `public bool IfTriggerThenPerformAction()`
-Calculates the triggers. If all are triggered, it performs all actions and returns the trigger result.
-
----
-
-<!-- API LINKS -->
+ <!-- API LINKS -->
 [InventoryModule]: /docs/master-inventory-engine/inventory-module
 [EntityModule]: /docs/core/entities/EntityModule
 [Loot Pack]:/docs/master-inventory-engine/item-class/loot-pack

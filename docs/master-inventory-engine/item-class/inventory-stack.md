@@ -142,6 +142,8 @@ Returns whether the items in this InventoryStack can be merged with the provided
 ---
 
 <!-- API LINKS -->
+[InventoryModule]: /docs/master-inventory-engine/inventory-module
+[EntityModule]: /docs/core/entities/EntityModule
 [Loot Pack]:/docs/master-inventory-engine/item-class/loot-pack
 [Item Database Settings]:/docs/master-inventory-engine/settings
 [ItemChangeCallback]:/docs/master-inventory-engine/callbacks

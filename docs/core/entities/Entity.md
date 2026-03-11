@@ -87,10 +87,8 @@ Determines whether this entity can be interacted with or controlled. When set to
 
 ---
 
-### Master Inventory Engine Properties
-
-#### `public List<InventoryEngine.`[InventoryData]`> Inventory`
-The list of [InventoryData] this entity carries.
+#### `public List<`[EntityModule]`> Modules`
+The list of [EntityModule] of this entity.
 
 ---
 
@@ -382,34 +380,47 @@ Clears all registered over-time effect change callbacks.
 
 ---
 
-### Master Inventory Engine Methods
-
-#### `public InventoryEngine.`[InventoryData]` GetAnyInventoryData()`
-Retrieve any exitsing [InventoryData] of this entity when available.
+#### `public static void RegisterOverTimeTickCallback(`[OverTimeEffectTickEvent] `_callback)`
+Registers a callback for tick of over-time effects on all entites.
 
 ---
 
-#### `public InventoryEngine.`[InventoryData]` GetEquipment()`
-Retrieve any exitsing Equipment type [InventoryData] of this entity when available.
+#### `public static void UnRegisterOverTimeTickCallback(`[OverTimeEffectTickEvent] `_callback)`
+Unregisters a callback for tick of over-time effects on all entites.
 
 ---
 
-#### `public InventoryEngine.`[InventoryData]` GetInventory()`
-Retrieve any exitsing Inventory|Crate type [InventoryData] of this entity when available.
+#### `public static void ClearOverTimeTickCallback()`
+Clear the registered callback for tick of over-time effects on all entites.
 
 ---
 
-#### `public InventoryEngine.`[InventoryData]` GetInventoryDataByType(InventoryEngine.`[InventoryData]`.HolderType _type)`
-Retrieve specified type [InventoryData] of this entity when available.
+
+#### `public T GetModule<T>() where T : `[EntityModule]
+Retrieve an extension [EntityModule] by its type.
 
 ---
 
-#### `public InventoryEngine.LootPack DropLootPack(int _index = -1)`
-Drop a [Loot Pack] this entity carries, pass an index number for drop a specified pack from the list, otherwise it will random pick one.
+#### `public void AddModule(`[EntityModule]` module)`
+Add an extension [EntityModule] Module.
 
 ---
+
+#### `public void RemoveModule<T>() where T : `[EntityModule]
+Remove an extension [EntityModule] by its type.
+
+---
+
+#### `public bool HasModule<T>() where T : `[EntityModule]
+Verify whether an [EntityModule] exists via its type.
+
+---
+
+[OverTimeEffectTickEvent]:/docs/core/over-time-effects/OverTimeEffectData
 
 <!-- API LINKS -->
+[InventoryModule]: /docs/master-inventory-engine/inventory-module
+[EntityModule]: /docs/core/entities/EntityModule
 [Loot Pack]:/docs/master-inventory-engine/item-class/loot-pack
 [Item Database Settings]:/docs/master-inventory-engine/settings
 [ItemChangeCallback]:/docs/master-inventory-engine/callbacks

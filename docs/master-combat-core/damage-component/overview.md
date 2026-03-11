@@ -39,6 +39,8 @@ Useful for static relationships such as:
 
 ### Physics Detection
 
+_Toggle 2D Physics for 2D games._
+
 Supported detection modes include:
 - IsTrigger Collider
 - Rigidbody
@@ -89,6 +91,8 @@ but `CombatDamageComponent` covers most common scenarios.
 
 
 <!-- API LINKS -->
+[InventoryModule]: /docs/master-inventory-engine/inventory-module
+[EntityModule]: /docs/core/entities/EntityModule
 [Loot Pack]:/docs/master-inventory-engine/item-class/loot-pack
 [Item Database Settings]:/docs/master-inventory-engine/settings
 [ItemChangeCallback]:/docs/master-inventory-engine/callbacks

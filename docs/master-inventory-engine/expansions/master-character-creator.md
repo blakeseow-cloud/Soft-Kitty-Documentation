@@ -18,7 +18,7 @@ You can access the appearance data through [Item]`.equipAppearance`. Below is an
  
 ```csharp
 private void Start(){ 
-      GameManager.PlayerEquipmentData.RegisterItemChangeCallback(OnEuqipmentItemChang); 
+      ItemObject.PlayerEquipmentData.RegisterItemChangeCallback(OnEuqipmentItemChang); 
 } 
 
  
@@ -38,6 +38,8 @@ public void OnEuqipmentItemChange(Dictionary<Item, int> _changedItems){
 ---
 
 <!-- API LINKS -->
+[InventoryModule]: /docs/master-inventory-engine/inventory-module
+[EntityModule]: /docs/core/entities/EntityModule
 [Loot Pack]:/docs/master-inventory-engine/item-class/loot-pack
 [Item Database Settings]:/docs/master-inventory-engine/settings
 [ItemChangeCallback]:/docs/master-inventory-engine/callbacks

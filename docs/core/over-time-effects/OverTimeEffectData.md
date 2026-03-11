@@ -35,6 +35,26 @@ void OnDestroy(){
 }
 
 ```
+
+---
+#### `public delegate void OverTimeEffectTickEvent(string _uid, int _layer, Entity _dealer, Entity _target);`
+Callback delegate invoked when the OverTimeEffect ticks.
+
+_Example_
+
+```csharp
+[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+static void OnBeforeSceneLoad()
+{
+    Entity.ClearOverTimeTickCallback();
+    Entity.RegisterOverTimeTickCallback(ExecuteOverTimeEffect);
+}
+
+public static void ExecuteOverTimeEffect(string _uid, int _layer, Entity _dealer, Entity _target){
+    ....
+}
+```
+
 ---
 
 ### Properties
@@ -74,6 +94,8 @@ This is commonly used for:
 ---
 
 <!-- API LINKS -->
+[InventoryModule]: /docs/master-inventory-engine/inventory-module
+[EntityModule]: /docs/core/entities/EntityModule
 [Loot Pack]:/docs/master-inventory-engine/item-class/loot-pack
 [Item Database Settings]:/docs/master-inventory-engine/settings
 [ItemChangeCallback]:/docs/master-inventory-engine/callbacks

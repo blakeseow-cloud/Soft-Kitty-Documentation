@@ -4,29 +4,32 @@ title: Common Use Cases
 
 ### How To Access The Player's Inventory And Equipment Data 
 
-The [InventoryData] class is responsible for managing all items for each unit.  
+- The [InventoryModule] is an [EntityModule] extension that provides inventory functionality to an [Entity]. It contains a list of [InventoryData].
+
+- The [InventoryData] class is responsible for managing all [item]s for each unit. 
+
 
 Here’s how you can access it in different scenarios: 
 
 1. Accessing the Player’s Inventory and Equipment 
-- **Player’s Inventory**: Use [GameManager]`.PlayerInventoryData` to get the player’s inventory data. 
-- **Player’s Equipment**: Use [GameManager]`.PlayerEquipmentData` to get the player’s equipment data. 
+- **Player’s Inventory**: Use [ItemObject]`.PlayerInventoryData` to quick access the player’s inventory data. 
+- **Player’s Equipment**: Use [ItemObject]`.PlayerEquipmentData` to quick access the player’s equipment data. 
 
 2. Accessing [InventoryData] for Other Units (e.g., **NPCs, Crates, Merchants**) 
 To retrieve the [InventoryData] data for other units, such as NPCs, crates, or merchants, use the following API call: 
 
 ```csharp
 //Retrieve the inventory data of a NPC with its unique entity id.
-   GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetInventory();
+   GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetModule<InventoryModule>().GetInventory();
 //Retrieve the equipment data of a NPC with its unique entity id.
-   GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetEquipment(); 
+   GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetModule<InventoryModule>().GetEquipment(); 
 //Retrieve any existing inventory data of a NPC with its unique entity id.
-   GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetAnyInventoryData(); 
+   GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetModule<InventoryModule>().GetAnyInventoryData(); 
 ```
 
 ```csharp
 //Retrieve a specified type of inventory data of a NPC with its unique entity id.
-GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetInventoryDataByType(InventoryData.HolderType.Merchant);
+GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetModule<InventoryModule>().GetInventoryDataByType(InventoryData.HolderType.Merchant);
 ```
 
 - **Parameters:**
@@ -89,9 +92,9 @@ Retrieve the number of a specific item in the inventory:
 Example:
 ```csharp
 //For player
-  int itemCount = GameManager.GetPlayer().GetInventory().GetItemNumber(5,true);
+  int itemCount = GameManager.GetPlayer().GetModule<InventoryModule>().GetInventory().GetItemNumber(5,true);
 //For npc
-  int itemCount = GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetInventory().GetItemNumber(5,true);
+  int itemCount = GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetModule<InventoryModule>().GetInventory().GetItemNumber(5,true);
 ```
 
 ---
@@ -119,9 +122,9 @@ You can modify the item you created as needed (e.g., upgrade level, enchantments
 ```csharp
   Item myNewItem = new Item(5);
 //For player
-  GameManager.GetPlayer().GetInventory().AddItem(myNewItem,2);
+  GameManager.GetPlayer().GetModule<InventoryModule>().GetInventory().AddItem(myNewItem,2);
 //For npc
-  GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetInventory().AddItem(myNewItem,2);
+  GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetModule<InventoryModule>().GetInventory().AddItem(myNewItem,2);
 ```
 
 ---
@@ -143,9 +146,9 @@ Example:
 
 ```csharp
 //For player
-  GameManager.GetPlayer().GetInventory().RemoveItem(5,2);
+  GameManager.GetPlayer().GetModule<InventoryModule>().GetInventory().RemoveItem(5,2);
 //For npc
-  GameManager.EntityManagerData.GetEntity("Npc_Entity_id").RemoveItem(5,2);
+  GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetModule<InventoryModule>().GetInventory().RemoveItem(5,2);
 ```
 
 ---
@@ -168,9 +171,9 @@ Example:
 
 ```csharp
 //For player
-  GameManager.GetPlayer().GetInventory().UseItem(5,1);
+  GameManager.GetPlayer().GetInventory().GetModule<InventoryModule>().GetInventory().UseItem(5,1);
 //For npc
-  GameManager.EntityManagerData.GetEntity("Npc_Entity_id").UseItem(5,1);
+  GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetModule<InventoryModule>().GetInventory().UseItem(5,1);
 ```
 
 ---
@@ -191,9 +194,9 @@ Example:
 
 ```csharp
 //For player
-  int _gold= GameManager.GetPlayer().GetInventory().GetCurrency(1);
+  int _gold= GameManager.GetPlayer().GetModule<InventoryModule>().GetInventory().GetCurrency(1);
 //For npc
-  int _gold= GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetCurrency(1);
+  int _gold= GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetModule<InventoryModule>().GetInventory().GetCurrency(1);
 ```
 
 ---
@@ -213,9 +216,9 @@ Example:
 
 ```csharp
 //For player
-  GameManager.GetPlayer().GetInventory().AddCurrency(int _type, int _add);
+  GameManager.GetPlayer().GetModule<InventoryModule>().GetInventory().AddCurrency(int _type, int _add);
 //For npc
-  GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetInventory().AddCurrency(int _type, int _add);
+  GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetModule<InventoryModule>().GetInventory().AddCurrency(int _type, int _add);
 ```
 
 ---
@@ -235,15 +238,17 @@ Example:
 
 ```csharp
 //For player
-  GameManager.GetPlayer().GetInventory().SetCurrency(int _type, int _value);
+  GameManager.GetPlayer().GetModule<InventoryModule>().GetInventory().SetCurrency(int _type, int _value);
 //For npc
-  GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetInventory().SetCurrency(int _type, int _value);
+  GameManager.EntityManagerData.GetEntity("Npc_Entity_id").GetModule<InventoryModule>().GetInventory().SetCurrency(int _type, int _value);
 ```
 
 
 ---
 
 <!-- API LINKS -->
+[InventoryModule]: /docs/master-inventory-engine/inventory-module
+[EntityModule]: /docs/core/entities/EntityModule
 [Loot Pack]:/docs/master-inventory-engine/item-class/loot-pack
 [Item Database Settings]:/docs/master-inventory-engine/settings
 [ItemChangeCallback]:/docs/master-inventory-engine/callbacks

@@ -21,13 +21,13 @@ title: Getting Started
 
 ```csharp
 //to open the player's inventory.
-GameManager.GetPlayer().GetInventory().OpenWindow()`; 
+GameManager.GetPlayer().GetModule<InventoryModule>().GetInventory().OpenWindow()`; 
 //to open the player's equipment UI.
-GameManager.GetPlayer().GetEquipment().OpenWindow()`; 
+GameManager.GetPlayer().GetModule<InventoryModule>().GetEquipment().OpenWindow()`; 
 //to open the crafting/enhancing/enchanting/socketing UI.
-GameManager.GetPlayer().GetInventory().OpenForgeWindow(true, true, true, true, 1F,"Forge"); 
+GameManager.GetPlayer().GetModule<InventoryModule>().GetInventory().OpenForgeWindow(true, true, true, true, 1F,"Forge"); 
 //to open the skill list.
-GameManager.GetPlayer().GetInventory().OpenWindowByName("Skills", "Skills")`; 
+GameManager.GetPlayer().GetModule<InventoryModule>().GetInventory().OpenWindowByName("Skills", "Skills")`; 
 ```
 
 ---
@@ -45,11 +45,11 @@ GameManager.GetPlayer().GetInventory().OpenWindowByName("Skills", "Skills")`;
 7. Now in your script, whenever you want to open the store, simply call:
 
 ```csharp
-GameManager.GetEntity("MerchantNPC").GetInventory().OpenWindow();
+GameManager.GetEntity("MerchantNPC").GetModule<InventoryModule>().GetInventory().OpenWindow();
 ```
 Alternatively, you can add a [EntityComponent] to one of your NPC character, select its UID as **MerchantNPC**. When your player interact with it, call:
 ```csharp
-  myNPC.GetComponent<EntityComponent>().GetInventory().OpenWindow();
+  myNPC.GetComponent<EntityComponent>().GetModule<InventoryModule>().GetInventory().OpenWindow();
 ```
 
 ---
@@ -62,15 +62,15 @@ Alternatively, you can add a [EntityComponent] to one of your NPC character, sel
 Directly drop via uid of the [Loot Pack]:
 
 ```csharp
-var _loot = GameManager.DropLootPack(Vector3.zero, "TestLootPack01");//Drop a loot pack from loot packs list.
+var _loot = ItemObject.DropLootPack(Vector3.zero, "TestLootPack01");//Drop a loot pack from loot packs list.
 ```
 
 Add [Loot Pack] to [Entity] in the [Entity Manager], the call:
 
 ```csharp
-var _loot = GameManager.GetEntity("Monster01").DropLootPack(); //Drop a loot pack from an entity.
+var _loot = GameManager.GetEntity("Monster01").GetModule<InventoryModule>().DropLootPack(); //Drop a loot pack from an entity.
 //or
-var _loot = GameManager.GetEntityInstance("Monster01").DropLootPack(); //Drop a loot pack from an entity instance.
+var _loot = GameManager.GetEntityInstance("Monster01").GetModule<InventoryModule>().DropLootPack(); //Drop a loot pack from an entity instance.
 
 ```
 
@@ -87,6 +87,8 @@ var _loot = GameManager.GetEntityInstance("Monster01").DropLootPack(); //Drop a 
 ---
 
 <!-- API LINKS -->
+[InventoryModule]: /docs/master-inventory-engine/inventory-module
+[EntityModule]: /docs/core/entities/EntityModule
 [Loot Pack]:/docs/master-inventory-engine/item-class/loot-pack
 [Item Database Settings]:/docs/master-inventory-engine/settings
 [ItemChangeCallback]:/docs/master-inventory-engine/callbacks

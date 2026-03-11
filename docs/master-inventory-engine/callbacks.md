@@ -31,20 +31,22 @@ public void OnEquipmentItemChange(Dictionary<Item, int> _changedItems)
 In the `Start` method of your script, register the callback: 
 
 ```csharp
-GameManager.PlayerEquipmentData.RegisterItemChangeCallback(OnEquipmentItemChange); 
+ItemObject.PlayerEquipmentData.RegisterItemChangeCallback(OnEquipmentItemChange); //For player
+GameManager.GetEntity("Jack").GetModule<InventoryModule>().GetEquipment().RegisterItemChangeCallback(OnEquipmentItemChange); //For NPC
 ```
 
 Remember to **UNREGISTER** the callback in `OnDestroy` to avoid memory leaks when the `GameObject` is destroyed: 
 
 ```csharp
-GameManager.PlayerEquipmentData.UnRegisterItemChangeCallback(OnEquipmentItemChange);
+ItemObject.PlayerEquipmentData.UnRegisterItemChangeCallback(OnEquipmentItemChange);//For player
+GameManager.GetEntity("Jack").GetModule<InventoryModule>().GetEquipment().UnRegisterItemChangeCallback(OnEquipmentItemChange); //For NPC
 ```
 
 Here is a full **EXAMPLE** of how you could use this callback to change player’s equipment model: 
 
 ```csharp
 private void Start(){
-    GameManager.PlayerEquipmentData.RegisterItemChangeCallback(OnEuqipmentItemChange);//Register callback for player's equipment
+    ItemObject.PlayerEquipmentData.RegisterItemChangeCallback(OnEuqipmentItemChange);//Register callback for player's equipment
 }
 
 public void OnEuqipmentItemChange(Dictionary<Item, int> _changedItems){
@@ -61,7 +63,7 @@ public void OnEuqipmentItemChange(Dictionary<Item, int> _changedItems){
 }
 
 private void OnDestroy(){
-    GameManager.PlayerEquipmentData.UnRegisterItemChangeCallback(OnEuqipmentItemChange);
+    ItemObject.PlayerEquipmentData.UnRegisterItemChangeCallback(OnEuqipmentItemChange);
 }
 
 ```
@@ -95,12 +97,14 @@ public void OnItemDrop(Item _droppedItem,int _number)
 In the `Start` method of your script, register the callback: 
 
 ```csharp
-ItemObject.PlayerInventoryData.RegisterItemDropCallback(OnItemDrop);
+ItemObject.PlayerInventoryData.RegisterItemDropCallback(OnItemDrop);//For player
+GameManager.GetEntity("Jack").GetModule<InventoryModule>().GetEquipment().RegisterItemDropCallback(OnItemDrop); //For NPC
 ```
 
 Remember to **UNREGISTER** the callback in `OnDestroy` to avoid memory leaks when the `GameObject` is destroyed: 
 ```csharp
-`ItemObject.PlayerInventoryData.UnRegisterItemDropCallback(OnItemDrop);
+`ItemObject.PlayerInventoryData.UnRegisterItemDropCallback(OnItemDrop);//For player
+GameManager.GetEntity("Jack").GetModule<InventoryModule>().GetEquipment().UnRegisterItemDropCallback(OnItemDrop); //For NPC
 ```
 
 ---
@@ -139,21 +143,23 @@ public void OnItemUse(string _action, int _id, int _index)
 In the `Start` method of your script, register the callback: 
 
 ```csharp
-ItemObject.PlayerInventoryData.RegisterItemUseCallback(OnItemUse)
+ItemObject.PlayerInventoryData.RegisterItemUseCallback(OnItemUse);//For Player
+GameManager.GetEntity("Jack").GetModule<InventoryModule>().GetEquipment().RegisterItemUseCallback(OnItemUse); //For NPC
 ```
 
 
 Remember to **UNREGISTER** the callback in `OnDestroy` to avoid memory leaks when the `GameObject` is destroyed: 
 
 ```csharp
-ItemObject.PlayerInventoryData.UnRegisterItemUseCallback(OnItemUse);
+ItemObject.PlayerInventoryData.UnRegisterItemUseCallback(OnItemUse);//For Player
+GameManager.GetEntity("Jack").GetModule<InventoryModule>().GetEquipment().UnRegisterItemUseCallback(OnItemUse); //For NPC
 ```
 
 Here is a full **EXAMPLE** of how you could use this callback to add player’s hp when player drink potion:
 
 ```csharp
 private void Start(){
-    GameManager.PlayerInventoryData.RegisterItemUseCallback(OnItemUse);//Register callback to trigger when player's item being used.
+    ItemObject.PlayerInventoryData.RegisterItemUseCallback(OnItemUse);//Register callback to trigger when player's item being used.
 }
 
 public void OnItemUse(string _action, int _id, int _index){ //When player using an item, this callback will be called.
@@ -174,13 +180,15 @@ public void OnItemUse(string _action, int _id, int _index){ //When player using 
 }
 
 private void OnDestroy(){
-    GameManager.PlayerInventoryData.UnRegisterItemUseCallback(OnItemUse);
+    ItemObject.PlayerInventoryData.UnRegisterItemUseCallback(OnItemUse);
 }
 ```
 
 ---
 
 <!-- API LINKS -->
+[InventoryModule]: /docs/master-inventory-engine/inventory-module
+[EntityModule]: /docs/core/entities/EntityModule
 [Loot Pack]:/docs/master-inventory-engine/item-class/loot-pack
 [Item Database Settings]:/docs/master-inventory-engine/settings
 [ItemChangeCallback]:/docs/master-inventory-engine/callbacks

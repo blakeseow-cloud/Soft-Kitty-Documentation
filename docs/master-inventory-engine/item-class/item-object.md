@@ -31,6 +31,16 @@ Retrieve the instance of the ItemObject instance assigned in SoftKitty Data Sett
 
 ---
 
+#### `public static InventoryEngine.`[InventoryData]` PlayerInventoryData`
+Retrieve the [InventoryData] class for player's invetory.
+
+---
+
+#### `public static InventoryEngine.`[InventoryData]` PlayerEquipmentData`
+Retrieve the [InventoryData] class for player's equipments.
+
+---
+
 #### `public List<StringColorData> itemTypes = new List<StringColorData>();`
 List of item category.
 
@@ -160,7 +170,14 @@ You can store the json file in your game install folder and let modder to modify
 
 ---
 
+#### `public static InventoryEngine.LootPack DropLootPack(Vector3 _pos, string _uid)`
+Drop a [Loot Pack] at the providing position via the unique string id..
+
+---
+
 <!-- API LINKS -->
+[InventoryModule]: /docs/master-inventory-engine/inventory-module
+[EntityModule]: /docs/core/entities/EntityModule
 [Loot Pack]:/docs/master-inventory-engine/item-class/loot-pack
 [Item Database Settings]:/docs/master-inventory-engine/settings
 [ItemChangeCallback]:/docs/master-inventory-engine/callbacks

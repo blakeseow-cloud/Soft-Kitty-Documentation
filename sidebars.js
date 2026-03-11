@@ -44,6 +44,7 @@ const sidebars = {
             'core/entities/overview',
             'core/entities/EntityManagerObject',
             'core/entities/Entity',
+            'core/entities/EntityModule',
             'core/entities/EntityComponent',
           ],
         },
@@ -145,6 +146,7 @@ const sidebars = {
            ],
         },
          'master-inventory-engine/settings',
+         'master-inventory-engine/inventory-module',
          {
             type: 'category',
             label: 'Item-Class',

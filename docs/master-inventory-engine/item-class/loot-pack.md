@@ -119,7 +119,7 @@ This will:
 - Instantiate VFX (if assigned)
 
 ```csharp
-var _loot = GameManager.DropLootPack(Vector3.zero, "TestLootPack01");//Drop a loot pack from loot packs list via its UID.
+var _loot = ItemObject.DropLootPack(Vector3.zero, "TestLootPack01");//Drop a loot pack from loot packs list via its UID.
 ```
 
 - **Drop from** [Entity]
@@ -127,11 +127,11 @@ var _loot = GameManager.DropLootPack(Vector3.zero, "TestLootPack01");//Drop a lo
 This uses the LootPack assigned to that entity.
 
 ```csharp
-var _loot = GameManager.GetEntity("Monster01").DropLootPack(); //Drop a random loot pack from an entity.
-var _loot = GameManager.GetEntity("Monster01").DropLootPack(1); //Drop a specified loot pack with its index number from an entity.
+var _loot = GameManager.GetEntity("Monster01").GetModule<InventoryModule>().DropLootPack(); //Drop a random loot pack from an entity.
+var _loot = GameManager.GetEntity("Monster01").GetModule<InventoryModule>().DropLootPack(1); //Drop a specified loot pack with its index number from an entity.
 //or
-var _loot = GameManager.GetEntityInstance("Monster01").DropLootPack(); //Drop a loot pack from an entity instance.
-var _loot = GameManager.GetEntityInstance("Monster01").DropLootPack(2); //Drop a specified loot pack with its index number from an entity instance.
+var _loot = GameManager.GetEntityInstance("Monster01").GetModule<InventoryModule>().DropLootPack(); //Drop a loot pack from an entity instance.
+var _loot = GameManager.GetEntityInstance("Monster01").GetModule<InventoryModule>().DropLootPack(2); //Drop a specified loot pack with its index number from an entity instance.
 
 ```
 
@@ -148,11 +148,11 @@ OpenPack:
 - Tracks window state
 
 ```csharp
-var _loot = GameManager.DropLootPack(Vector3.zero, "TestLootPack01");//Drop a loot pack from loot packs list.
+var _loot = ItemObject.DropLootPack(Vector3.zero, "TestLootPack01");//Drop a loot pack from loot packs list.
 //or
-var _loot = GameManager.GetEntity("Monster01").DropLootPack(); //Drop a loot pack from an entity.
+var _loot = GameManager.GetEntity("Monster01").GetModule<InventoryModule>().DropLootPack(); //Drop a loot pack from an entity.
 //or
-var _loot = GameManager.GetEntityInstance("Monster01").DropLootPack(); //Drop a loot pack from an entity instance.
+var _loot = GameManager.GetEntityInstance("Monster01").GetModule<InventoryModule>().DropLootPack(); //Drop a loot pack from an entity instance.
 
 _loot.OpenPack();//Open the loot pack;
 ```
@@ -183,6 +183,8 @@ Called when:
 ---
 
 <!-- API LINKS -->
+[InventoryModule]: /docs/master-inventory-engine/inventory-module
+[EntityModule]: /docs/core/entities/EntityModule
 [Loot Pack]:/docs/master-inventory-engine/item-class/loot-pack
 [Item Database Settings]:/docs/master-inventory-engine/settings
 [ItemChangeCallback]:/docs/master-inventory-engine/callbacks
