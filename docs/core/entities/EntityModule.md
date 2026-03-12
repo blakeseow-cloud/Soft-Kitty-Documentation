@@ -22,6 +22,8 @@ Typical examples of modules include:
 
 - Dialogue data
 
+- Character customization data
+
 Each system can provide its own module that stores data and implements its own logic and editor interface.
 
 ---
@@ -31,7 +33,12 @@ Each system can provide its own module that stores data and implements its own l
 An [Entity] contains a list of modules:
 
 ```csharp
-public List<EntityModule> Modules = new List<EntityModule>();
+public List<EntityModuleWrapper> Modules = new List<EntityModuleWrapper>();
+public class EntityModuleWrapper
+{
+    public EntityModule GetModule(){...}
+    ...
+}
 ```
 
 Each module derives from the abstract base class:
@@ -123,22 +130,18 @@ Each module is responsible for saving and loading its own data.
 #### Save module data
 
 ```csharp
-public abstract void ToJson();
+public abstract string ToJson();
 ```
 
-This converts the module data into a string and stores it in:
-
-```csharp
-public string saveData;
-```
+This converts the module data into a json string.
 
 #### Load module data
 
 ```csharp
-public abstract void FromJson();
+public abstract EntityModule FromJson(string _json);
 ```
 
-This reconstructs the module's data from the saved string (`saveData`).
+This reconstructs the module's data from a json string.
 
 ---
 
@@ -155,33 +158,63 @@ This should return a new instance containing the same data.
 
 ---
 
+### Runtime save data
+
+```csharp
+public abstract string CompressData();
+```
+
+Compress full data into a compact format. To ensure only minimal data is saved for the game.
+
+```csharp
+public abstract string UncompressData(string _compactJson);
+```
+Uncompress data from a compact format. This should be the reversed conversion of CompressData();
+
+---
+
 ### Creating a Custom Module
 
 To extend the [Entity] system, create a class that inherits from EntityModule.
 
-Example:
+_Example:_:
 
 ```csharp
 public class InventoryModule : EntityModule
 {
     public List<Item> items = new List<Item>();
 
+    public override void RuntimeInit(){
+        for(int i=0;i<items.Count;i++)items[i].Init();
+    }
+
     public override EntityModule Copy()
     {
         InventoryModule copy = new InventoryModule();
-        copy.items = new List<Item>(items);
+        copy.items= new List<Item>();
+        for(int i=0;i<items.Count;i++)copy.items.Add(items[i].clone());
         return copy;
     }
 
-    public override void ToJson()
+    public override string ToJson()
     {
-        saveData = JsonUtility.ToJson(this);
+        return JsonUtility.ToJson(this);
     }
 
-    public override void FromJson()
+    public override EntityModule FromJson(string _json)
     {
-        JsonUtility.FromJsonOverwrite(saveData, this);
+         return (InventoryModule)JsonUtility.FromJson(_json, typeof(InventoryModule));
     }
+
+    public override string CompressData(){
+        return ItemDataFormatter.Zip(items);
+    }
+
+    public override string UncompressData(string _compactJson){
+        return ItemDataFormatter.Unzip(_compactJson);
+    }
+
+    ...your own api
 }
 
 ```
@@ -209,7 +242,7 @@ public interface IEntityInspectorModule
 }
 ```
 
-Example:
+_Example:_:
 
 ```csharp
 public class InventoryInspectorModule : IEntityInspectorModule
@@ -217,11 +250,20 @@ public class InventoryInspectorModule : IEntityInspectorModule
     public bool DrawInspector(Entity entity, EntityManagerObject target)
     {
         // draw editor UI
+        for(var item in myTarget.mData.GetModule<InventoryModule>().items){
+            GUILayout.BeginHorizontal();
+            GUILayout.Space(20);
+            GUILayout.Box(item.icon, GUILayout.Width(20), GUILayout.Height(20));
+            GUILayout.TextField( item.name, GUILayout.Width(100));
+            ...
+            GUILayout.EndHorizontal();
+        }
+        return GUI.changed;
     }
 
     public void DrawRuntimeInspector(EntityComponent target)
     {
-        // draw runtime UI
+        // draw runtime UI (readonly)
     }
 }
 ```
