@@ -137,8 +137,9 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Soft Kitty Studio, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: prismThemes.github,
+        theme: prismThemes.vsLight,
         darkTheme: prismThemes.dracula,
+        additionalLanguages: ['csharp'],
       },
     }),
 };

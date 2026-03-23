@@ -195,7 +195,41 @@ const sidebars = {
       label: 'Master Map|Navigation',
       items: [
         'master-map-navigation/overview',
-        'master-map-navigation/comingSoon',
+         {
+            type: 'category',
+            label: 'Getting-Started',
+            items: [
+             'master-map-navigation/getting-started/installation',
+             'master-map-navigation/getting-started/static-mode',
+             'master-map-navigation/getting-started/dynamic-mode',
+           ],
+        },
+        {
+            type: 'category',
+            label: 'Settings',
+            items: [
+             'master-map-navigation/settings/general-settings',
+             'master-map-navigation/settings/scene-map',
+             'master-map-navigation/settings/world-map',
+             'master-map-navigation/settings/mini-map',
+           ],
+        },
+        'master-map-navigation/map-point',
+        'master-map-navigation/map-generator',
+        'master-map-navigation/fog-of-war',
+        'master-map-navigation/sub-map',
+        'master-map-navigation/navigation',
+        'master-map-navigation/callbacks',
+        {
+            type: 'category',
+            label: 'Api',
+            items: [
+             'master-map-navigation/api/map-manager',
+             'master-map-navigation/api/map-interactive',
+             'master-map-navigation/api/map-point',
+             'master-map-navigation/api/controller-support',
+           ],
+        },
       ],
     },
 
