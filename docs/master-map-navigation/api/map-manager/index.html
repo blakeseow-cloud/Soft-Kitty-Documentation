@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">MapManager | Soft Kitty Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://www.soft-kitty.com/img/SoftKitty-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://www.soft-kitty.com/img/SoftKitty-social-card.jpg"><meta data-rh="true" property="og:url" content="https://www.soft-kitty.com/docs/master-map-navigation/api/map-manager"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MapManager | Soft Kitty Documentation"><meta data-rh="true" name="description" content="public static void SetPlayer(Transform _playerTransform)"><meta data-rh="true" property="og:description" content="public static void SetPlayer(Transform _playerTransform)"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://www.soft-kitty.com/docs/master-map-navigation/api/map-manager"><link data-rh="true" rel="alternate" href="https://www.soft-kitty.com/docs/master-map-navigation/api/map-manager" hreflang="en"><link data-rh="true" rel="alternate" href="https://www.soft-kitty.com/docs/master-map-navigation/api/map-manager" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MapManager","item":"https://www.soft-kitty.com/docs/master-map-navigation/api/map-manager"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Soft Kitty Documentation RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Soft Kitty Documentation Atom Feed"><link rel="stylesheet" href="/assets/css/styles.3ddff679.css">
-<script src="/assets/js/runtime~main.96df35bd.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.d1bd1fd7.js" defer="defer"></script>
 <script src="/assets/js/main.a8e27ac6.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -21,22 +21,28 @@
 <p>Assigns the player&#x27;s camera to the <code>Master Map Navigation</code> system. Otherwise <code>Camera.main</code> will be used.</p>
 <p>This function must be called when the scene starts to initialize the player&#x27;s orientation.</p>
 <hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-static-mapinteractive-getminimapinstance"><code>public static MapInteractive GetMiniMapInstance()</code><a href="#public-static-mapinteractive-getminimapinstance" class="hash-link" aria-label="Direct link to public-static-mapinteractive-getminimapinstance" title="Direct link to public-static-mapinteractive-getminimapinstance" translate="no">​</a></h4>
+<p>Retrieve the mini-map instance in the canvas.</p>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-static-mapinteractive-getworldmapinstance"><code>public static MapInteractive GetWorldMapInstance()</code><a href="#public-static-mapinteractive-getworldmapinstance" class="hash-link" aria-label="Direct link to public-static-mapinteractive-getworldmapinstance" title="Direct link to public-static-mapinteractive-getworldmapinstance" translate="no">​</a></h4>
+<p>Retrieve the world-map instance in the canvas.</p>
+<hr>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-static-string-savefog"><code>public static string SaveFog()</code><a href="#public-static-string-savefog" class="hash-link" aria-label="Direct link to public-static-string-savefog" title="Direct link to public-static-string-savefog" translate="no">​</a></h4>
 <p>Convert the current <a class="" href="/docs/master-map-navigation/fog-of-war">Fog of War</a> data into a json string.</p>
 <hr>
-<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-void-loadfogstring-_json"><code>public void LoadFog(string _json)</code><a href="#public-void-loadfogstring-_json" class="hash-link" aria-label="Direct link to public-void-loadfogstring-_json" title="Direct link to public-void-loadfogstring-_json" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-static-void-loadfogstring-_json"><code>public static void LoadFog(string _json)</code><a href="#public-static-void-loadfogstring-_json" class="hash-link" aria-label="Direct link to public-static-void-loadfogstring-_json" title="Direct link to public-static-void-loadfogstring-_json" translate="no">​</a></h4>
 <p>Load the <a class="" href="/docs/master-map-navigation/fog-of-war">Fog of War</a> data with a json string.</p>
 <hr>
-<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-void-addfogvector3-_worldpos-float-_radius"><code>public void AddFog(Vector3 _worldPos, float _radius)</code><a href="#public-void-addfogvector3-_worldpos-float-_radius" class="hash-link" aria-label="Direct link to public-void-addfogvector3-_worldpos-float-_radius" title="Direct link to public-void-addfogvector3-_worldpos-float-_radius" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-static-void-addfogvector3-_worldpos-float-_radius"><code>public static void AddFog(Vector3 _worldPos, float _radius)</code><a href="#public-static-void-addfogvector3-_worldpos-float-_radius" class="hash-link" aria-label="Direct link to public-static-void-addfogvector3-_worldpos-float-_radius" title="Direct link to public-static-void-addfogvector3-_worldpos-float-_radius" translate="no">​</a></h4>
 <p>Cover a world space position with <a class="" href="/docs/master-map-navigation/fog-of-war">Fog of War</a> by normalized radius (0~1).</p>
 <hr>
-<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-void-removefogvector3-_worldpos-float-_radius"><code>public void RemoveFog(Vector3 _worldPos, float _radius)</code><a href="#public-void-removefogvector3-_worldpos-float-_radius" class="hash-link" aria-label="Direct link to public-void-removefogvector3-_worldpos-float-_radius" title="Direct link to public-void-removefogvector3-_worldpos-float-_radius" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-static-void-removefogvector3-_worldpos-float-_radius"><code>public static void RemoveFog(Vector3 _worldPos, float _radius)</code><a href="#public-static-void-removefogvector3-_worldpos-float-_radius" class="hash-link" aria-label="Direct link to public-static-void-removefogvector3-_worldpos-float-_radius" title="Direct link to public-static-void-removefogvector3-_worldpos-float-_radius" translate="no">​</a></h4>
 <p>Reveal a world space position from <a class="" href="/docs/master-map-navigation/fog-of-war">Fog of War</a> by normalized radius (0~1).</p>
 <hr>
-<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-void-clearfog"><code>public void ClearFog()</code><a href="#public-void-clearfog" class="hash-link" aria-label="Direct link to public-void-clearfog" title="Direct link to public-void-clearfog" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-static-void-clearfog"><code>public static void ClearFog()</code><a href="#public-static-void-clearfog" class="hash-link" aria-label="Direct link to public-static-void-clearfog" title="Direct link to public-static-void-clearfog" translate="no">​</a></h4>
 <p>Clear all <a class="" href="/docs/master-map-navigation/fog-of-war">Fog of War</a> from the map.</p>
 <hr>
-<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-void-fillfog"><code>public void FillFog()</code><a href="#public-void-fillfog" class="hash-link" aria-label="Direct link to public-void-fillfog" title="Direct link to public-void-fillfog" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-static-void-fillfog"><code>public static void FillFog()</code><a href="#public-static-void-fillfog" class="hash-link" aria-label="Direct link to public-static-void-fillfog" title="Direct link to public-static-void-fillfog" translate="no">​</a></h4>
 <p>Cover the whole map with <a class="" href="/docs/master-map-navigation/fog-of-war">Fog of War</a>.</p>
 <hr>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-static-void-navigatetoherevector3-_worldpos"><code>public static void NavigateToHere(Vector3 _worldPos)</code><a href="#public-static-void-navigatetoherevector3-_worldpos" class="hash-link" aria-label="Direct link to public-static-void-navigatetoherevector3-_worldpos" title="Direct link to public-static-void-navigatetoherevector3-_worldpos" translate="no">​</a></h4>
@@ -45,6 +51,12 @@
 <hr>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-static-void-stopnavigation"><code>public static void StopNavigation()</code><a href="#public-static-void-stopnavigation" class="hash-link" aria-label="Direct link to public-static-void-stopnavigation" title="Direct link to public-static-void-stopnavigation" translate="no">​</a></h4>
 <p>Clears the current <a class="" href="/docs/master-map-navigation/navigation">navigation path</a> and stops the navigation.</p>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-static-void-starttracktransform-_target"><code>public static void StartTrack(Transform _target)</code><a href="#public-static-void-starttracktransform-_target" class="hash-link" aria-label="Direct link to public-static-void-starttracktransform-_target" title="Direct link to public-static-void-starttracktransform-_target" translate="no">​</a></h4>
+<p>Start tracking a transform on the mini-map, a white arrow will point to the target on the map.</p>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-static-void-endtrack"><code>public static void EndTrack()</code><a href="#public-static-void-endtrack" class="hash-link" aria-label="Direct link to public-static-void-endtrack" title="Direct link to public-static-void-endtrack" translate="no">​</a></h4>
+<p>Stop tracking a transform on the mini-map and hide the white arrow.</p>
 <hr>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-static-mappoint-placemarkervector3-_worldpos"><code>public static MapPoint PlaceMarker(Vector3 _worldPos)</code><a href="#public-static-mappoint-placemarkervector3-_worldpos" class="hash-link" aria-label="Direct link to public-static-mappoint-placemarkervector3-_worldpos" title="Direct link to public-static-mappoint-placemarkervector3-_worldpos" translate="no">​</a></h4>
 <p>Adding a <code>custom marker</code> on the map to mark points of interest.</p>
