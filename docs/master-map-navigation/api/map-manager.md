@@ -21,37 +21,49 @@ This function must be called when the scene starts to initialize the player's or
 
 ---
 
+#### `public static MapInteractive GetMiniMapInstance()`
+
+Retrieve the mini-map instance in the canvas.
+
+---
+
+#### `public static MapInteractive GetWorldMapInstance()`
+
+Retrieve the world-map instance in the canvas.
+
+---
+
 #### `public static string SaveFog()`
 
 Convert the current [Fog of War] data into a json string.
 
 ---
 
-#### `public void LoadFog(string _json)`
+#### `public static void LoadFog(string _json)`
 
 Load the [Fog of War] data with a json string.
 
 ---
 
-#### `public void AddFog(Vector3 _worldPos, float _radius)`
+#### `public static void AddFog(Vector3 _worldPos, float _radius)`
 
 Cover a world space position with [Fog of War] by normalized radius (0~1).
 
 ---
 
-#### `public void RemoveFog(Vector3 _worldPos, float _radius)`
+#### `public static void RemoveFog(Vector3 _worldPos, float _radius)`
 
 Reveal a world space position from [Fog of War] by normalized radius (0~1).
 
 ---
 
-#### `public void ClearFog()`
+#### `public static void ClearFog()`
 
 Clear all [Fog of War] from the map.
 
 ---
 
-#### `public void FillFog()`
+#### `public static void FillFog()`
 
 Cover the whole map with [Fog of War].
 
@@ -68,6 +80,18 @@ Creates a [navigation path] from the player's current position to the specified 
 #### `public static void StopNavigation()`
 
 Clears the current [navigation path] and stops the navigation.
+
+---
+
+#### `public static void StartTrack(Transform _target)`
+
+Start tracking a transform on the mini-map, a white arrow will point to the target on the map.
+
+---
+
+#### `public static void EndTrack()`
+
+Stop tracking a transform on the mini-map and hide the white arrow.
 
 ---
 

@@ -8,6 +8,12 @@ Set the default zoom level for the `mini map`.
 
 ---
 
+####  Allow Zoom In/Out
+
+Enable or disable zooming in/out on the `mini map` using the mouse scroll wheel.
+
+---
+
 ####  Maximum Zoom Out
 
 Define the maximum zoom-out level for the `mini map`.
@@ -34,23 +40,26 @@ Enable or disable the display of the player’s coordinates on the `mini map` in
 
 ---
 
-####  Enable Player Orientation Button
+####  Map Rotate With Camera
 
-Enable the compass button on the top-left of the `mini map`. This allows players to toggle whether the map rotates to align with the player’s direction.
-
----
-
-####  Player Orientation as Default
-
-Set the `mini map` to always rotate by default, keeping the player’s direction at the top.
+Set the `mini map` to always rotate with camera angle.
 
 ---
 
-####  Allow Zoom In/Out
+#### Show Track Arrow When Navigate
 
-Enable or disable zooming in/out on the `mini map` using the mouse scroll wheel.
+When navigate to a target position, toggle this option to show a white arrow point to this position on the mini-map. 
+You can also manually call:
+
+```csharp
+MapManager.StartTrack(Transform _target)
+MapManager.EndTrack()
+```
+
+to use this arrow with your own logic.
 
 ---
+
 
 [Map Generator]:/docs/master-map-navigation/map-generator
 [Map Point]:/docs/master-map-navigation/map-point

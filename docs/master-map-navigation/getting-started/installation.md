@@ -3,6 +3,10 @@ title: Installation
 ---
 ---
 
+### HDRP render pipeline
+
+- Import the package.
+
 ### URP render pipeline
 
 - Import the package.
