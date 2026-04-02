@@ -21,6 +21,18 @@ After assigned the data object, a editor interface can be found at:
 
 Where you can easily manage attributes with convenient editor interface.
 
+---
+
+### Data Mode Options: Unified vs ScriptableObject
+
+To enhance flexibility in managing item data, we've introduced a feature allowing you to choose between two data storage modes: **Unified** and **ScriptableObject**. This change gives you more control over how items are structured and stored in your project.
+
+- **Unified**: The default mode, where all item data is stored together in a single array within the ItemObject `ScriptableObject`. This mode is ideal for simple setups and offers cleaner structures for smaller projects.
+- **ScriptableObject**: This mode stores each item as an individual `ScriptableObject`. It's perfect for larger projects that require better version control and item-specific customization. Storing items as separate `ScriptableObjects` makes it easier to track changes and manage assets across different versions of your project.
+
+#### Switching Data Modes
+
+You can easily switch between these two modes using the Data Mode dropdown. Additionally, a new Clone to `ScriptableObject` mode button has been added to help you migrate item data from one mode to the other, making transitions between different storage methods seamless.
 
 ---
 

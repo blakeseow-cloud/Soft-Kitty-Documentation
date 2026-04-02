@@ -186,6 +186,155 @@ private void OnDestroy(){
 
 ---
 
+### WindowCloseCallback
+
+```csharp
+public delegate void WindowCloseCallback(InventoryData _key);
+```
+
+This callback is triggered whenever an inventory window is closed, which inculde inventory, equipment, crafting, loot window and skills. The callback provides associated [InventoryData] as arg.
+
+
+##### TO REGISTER THIS CALLBACK: 
+
+First, define the callback function in your script: 
+
+```csharp
+public void OnWindowClose(InventoryData _key)
+{ 
+// Your logic here 
+} 
+```
+
+When open a window, register the callback: 
+
+```csharp
+UiWindow playerWindow;
+
+public void OpenPlayerInventory(){
+   playerWindow = ItemObject.PlayerInventoryData.OpenWindow();
+   playerWindow.RegisterCloseCallback(OnWindowClose, ItemObject.PlayerInventoryData);
+}
+```
+
+Remember to **UNREGISTER** the callback in `OnDestroy` to avoid memory leaks when the `GameObject` is destroyed: 
+
+```csharp
+playerWindow.UnRegisterCloseCallback(ItemObject.PlayerInventoryData);
+```
+
+Here is a full **EXAMPLE** of how you could use this callback to play an animation when open and close the player inventory:
+
+```csharp
+UiWindow playerWindow;
+Animator playerAnimator;
+
+public void TogglePlayerInventory(){
+   if(playerWindow!=null){
+       playerWindow.Close();//Close the window if it already exists.
+   }else{
+       playerWindow = ItemObject.PlayerInventoryData.OpenWindow();
+       playerWindow.RegisterCloseCallback(OnWindowClose, ItemObject.PlayerInventoryData);
+       playerAnimator.Play("OpenInventoryAnimation");
+   }
+}
+
+public void OnWindowClose(InventoryData _key)
+{ 
+   playerAnimator.Play("CloseInventoryAnimation");
+} 
+
+private void OnDestroy(){
+   if(playerWindow!=null)playerWindow.UnRegisterCloseCallback(ItemObject.PlayerInventoryData);
+}
+```
+
+---
+
+### CraftingStateCallback
+
+```csharp
+public delegate void CraftingStateCallback(CraftingState _state, float _remainTime);
+```
+
+This callback is triggered whenever the crafting state of an [InventoryData] is changed, which inculde:
+
+- CraftingState.**StartCrafting** : Trigger when crafting starts.
+- CraftingState.**CraftingProgress** : Trigger every frame while craging progress.
+- CraftingState.**EndCrafting** : Trigger when crafting ends.
+
+The callback provides remain time of the crafting as arg (_remainTime).
+When the state type is **EndCrafting**:
+
+- _remainTime == 0F >> **success**
+- _remainTime == -1F >> **failed**
+
+##### TO REGISTER THIS CALLBACK: 
+
+First, define the callback function in your script: 
+
+```csharp
+public void OnCraftingStateChange(CraftingState _state, float _remainTime)
+{ 
+// Your logic here 
+} 
+```
+
+In the `Start` method of your script, register the callback: 
+
+```csharp
+void Start(){
+   ItemObject.PlayerInventoryData.RegisterCraftingStateCallback(OnCraftingStateChange);
+}
+```
+
+Remember to **UNREGISTER** the callback in `OnDestroy` to avoid memory leaks when the `GameObject` is destroyed: 
+
+```csharp
+ItemObject.PlayerInventoryData.UnRegisterCraftingStateCallback(OnCraftingStateChange); //Unregister specified callback.
+// Or
+ItemObject.PlayerInventoryData.ClearCraftingStateCallback(); //Clear all registered callback.
+```
+
+Here is a full **EXAMPLE** of how you could use this callback to play an animation and display remain time when crafting:
+
+```csharp
+Animator playerAnimator;
+Text CraftingTimeText;
+
+void Start(){
+   ItemObject.PlayerInventoryData.RegisterCraftingStateCallback(OnCraftingStateChange);
+}
+
+public void OnCraftingStateChange(CraftingState _state, float _remainTime)
+{ 
+   switch(_state){
+       case CraftingState.StartCrafting:
+          playerAnimator.Play("StartCraftingAnimation");
+          CraftingTimeText.text = _remainTime.ToString();
+       break;
+       case CraftingState.CraftingProgress:
+          CraftingTimeText.text = _remainTime.ToString();
+       break;
+       case CraftingState.EndCrafting:
+          if(_remainTime==0F){
+            playerAnimator.Play("SuccessCraftingAnimation");
+            CraftingTimeText.text = "SUCCESS!";
+          }else{
+            playerAnimator.Play("FailedCraftingAnimation");
+            CraftingTimeText.text = "FAILED!";
+          }
+       break;
+   }
+} 
+
+private void OnDestroy(){
+   ItemObject.PlayerInventoryData.UnRegisterCraftingStateCallback(OnCraftingStateChange);
+}
+```
+
+---
+
 <!-- API LINKS -->
 [InventoryModule]: /docs/master-inventory-engine/inventory-module
 [EntityModule]: /docs/core/entities/EntityModule

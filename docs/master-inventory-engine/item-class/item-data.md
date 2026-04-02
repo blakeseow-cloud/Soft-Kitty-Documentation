@@ -119,8 +119,11 @@ Opens the appropriate interface based on the type of this InventoryData.
 
 ---
 
-#### `public UiWindow OpenForgeWindow(bool _enableCrafting=true, bool _enableEnhancing = true, bool _enableEnchanting=true, bool _enableSocketing=true)` 
+#### `public UiWindow OpenForgeWindow(bool _enableCrafting=true, bool _enableEnhancing = true, bool _enableEnchanting=true, bool _enableSocketing=true, string _name = "Forge", List<string> _blueprintSubTags = null)` 
 Opens the crafting/enhancing/enchanting/socketing window for this InventoryData, using the items in Stacks as materials. You can enable/disable different modules by the args. 
+
+- _name : The name of the window.
+- _blueprintSubTags: The list of sub-tags to filter the crafting blueprints, _eg.Food,Weapon,Armor.._
 
 ---
 
