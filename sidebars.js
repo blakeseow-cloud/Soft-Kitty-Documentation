@@ -186,7 +186,50 @@ const sidebars = {
       label: 'Master Character Creator',
       items: [
         'master-character-creator/overview',
-        'master-character-creator/comingSoon',
+        {
+            type: 'category',
+            label: 'Getting-Started',
+            items: [
+             'master-character-creator/getting-started/installation',
+             'master-character-creator/getting-started/getting-started',
+           ],
+        },
+        {
+            type: 'category',
+            label: 'Common Use Cases',
+            items: [
+             'master-character-creator/common-use-cases/player-character',
+             'master-character-creator/common-use-cases/npc-character',
+             'master-character-creator/common-use-cases/in-game-customization',
+             'master-character-creator/common-use-cases/character-controllers',
+             'master-character-creator/common-use-cases/lip-sync',
+             'master-character-creator/common-use-cases/customize-emotions',
+             'master-character-creator/common-use-cases/managing-weapons',
+           ],
+        },
+        'master-character-creator/useful-modules',
+        {
+            type: 'category',
+            label: 'System',
+            items: [
+             'master-character-creator/system/character-customization-object',
+             'master-character-creator/system/character-customization-module',
+             'master-character-creator/system/appearance-data',
+             'master-character-creator/system/character-entity',
+           ],
+        },
+        'master-character-creator/settings',
+        'master-character-creator/work-flow',
+        {
+            type: 'category',
+            label: 'Implementing Your Models',
+            items: [
+             'master-character-creator/implementing-your-models/accessories-models',
+             'master-character-creator/implementing-your-models/customization-textures',
+             'master-character-creator/implementing-your-models/outfits-models',
+           ],
+        },
+
       ],
     },
 

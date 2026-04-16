@@ -156,6 +156,13 @@ This makes GraphObjects truly **reusable**, **portable**, and **community-friend
 ---
 
 <!-- API LINKS -->
+[Accessories Models]: /docs/master-character-creator/implementing-your-models/accessories-models
+[Customization Textures]: /docs/master-character-creator/implementing-your-models/customization-textures
+[Outfits Models]: /docs/master-character-creator/implementing-your-models/outfits-models
+[CharacterAppearance]: /docs/master-character-creator/system/appearance-data
+[CharacterCustomizationModule]: /docs/master-character-creator/system/character-customization-module
+[CharacterCustomizationObject]: /docs/master-character-creator/system/character-customization-object
+[CharacterEntity]: /docs/master-character-creator/system/character-entity
 [InventoryModule]: /docs/master-inventory-engine/inventory-module
 [EntityModule]: /docs/core/entities/EntityModule
 [Loot Pack]:/docs/master-inventory-engine/item-class/loot-pack

@@ -6,6 +6,8 @@ title: Overview
 
 ![](../../static/img/20260129-152944.png)
 
+**[Unity AssetStore Page](https://assetstore.unity.com/packages/package/360770)**
+
 A versatile Unity package for crafting, inventory, and trade systems. Easy to customize, fully documented, and packed with assets—perfect for any game genre. Expandable with tags and commands support.
 
 Transform your game development process with our all-in-one package designed to simplify the creation of rich, immersive inventory and crafting systems. Whether you’re building a shooter, a rogue-like, or any game that requires a robust inventory, this tool has you covered.
@@ -90,6 +92,13 @@ Support Import/Export all item/attribute/enchantment settings with json format i
 ---
 
 <!-- API LINKS -->
+[Accessories Models]: /docs/master-character-creator/implementing-your-models/accessories-models
+[Customization Textures]: /docs/master-character-creator/implementing-your-models/customization-textures
+[Outfits Models]: /docs/master-character-creator/implementing-your-models/outfits-models
+[CharacterAppearance]: /docs/master-character-creator/system/appearance-data
+[CharacterCustomizationModule]: /docs/master-character-creator/system/character-customization-module
+[CharacterCustomizationObject]: /docs/master-character-creator/system/character-customization-object
+[CharacterEntity]: /docs/master-character-creator/system/character-entity
 [InventoryModule]: /docs/master-inventory-engine/inventory-module
 [EntityModule]: /docs/core/entities/EntityModule
 [Loot Pack]:/docs/master-inventory-engine/item-class/loot-pack

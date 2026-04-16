@@ -19,7 +19,7 @@ After assigned the data object, a editor interface can be found at:
 
 `Project Settings → SoftKitty → SubData - Items`
 
-Where you can easily manage attributes with convenient editor interface.
+Where you can easily manage items with convenient editor interface.
 
 ---
 
@@ -188,6 +188,13 @@ Drop a [Loot Pack] at the providing position via the unique string id..
 ---
 
 <!-- API LINKS -->
+[Accessories Models]: /docs/master-character-creator/implementing-your-models/accessories-models
+[Customization Textures]: /docs/master-character-creator/implementing-your-models/customization-textures
+[Outfits Models]: /docs/master-character-creator/implementing-your-models/outfits-models
+[CharacterAppearance]: /docs/master-character-creator/system/appearance-data
+[CharacterCustomizationModule]: /docs/master-character-creator/system/character-customization-module
+[CharacterCustomizationObject]: /docs/master-character-creator/system/character-customization-object
+[CharacterEntity]: /docs/master-character-creator/system/character-entity
 [InventoryModule]: /docs/master-inventory-engine/inventory-module
 [EntityModule]: /docs/core/entities/EntityModule
 [Loot Pack]:/docs/master-inventory-engine/item-class/loot-pack
