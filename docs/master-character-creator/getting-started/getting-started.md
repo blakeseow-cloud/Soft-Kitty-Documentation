@@ -61,6 +61,81 @@ To run the demo, make sure to add the following scene to your build settings:
 
    For more advanced usage of the system, continue reading the following sections of this document.
 
+---
+
+### Working with Other SoftKitty Packages
+
+When using `MasterCharacterCreato`r alongside other SoftKitty packages—such as `Master InventoryEnginePro`, `MasterCombatCore`, or `MasterMapNavigationSystem` — all character customization data is stored within the [Entity]:
+
+
+#### EntityManager
+
+Within the [EntityManagerObject], you will notice an additional module under each [Entity] called [CharacterCustomizationModule]:
+
+![](../../../static/img/20260449-154959.png)
+
+Expand this module to access its interface, then enable the Enable checkbox to activate `Character Customization` data for the entity. You can create new data by clicking the **`Create`** button, or import existing presets by browsing `*.bytes` files in your project.
+
+![](../../../static/img/20260451-155107.png)
+
+Once the data has been created or assigned, you can access an [Entity]'s `Character Customization` data using the following code:
+
+```csharp
+Entity _npcEntity = GameManager.GetEntity("TestNPC");
+CharacterAppearance _data =  _npcEntity.GetModule<CharacterCustomizationModule>().mCharacterAppearance;
+```
+
+#### CharacterEntity
+
+To use the [CharacterEntity] component with the [EntityManagerObject], simply add an [EntityComponent] to the same GameObject.
+
+Once added, the UID of the [CharacterEntity] will be synchronized with the UID of the [EntityComponent]. This allows the [CharacterAppearance] data to be shared seamlessly between the [CharacterEntity] and the [EntityManagerObject] database.
+
+![](../../../static/img/20260400-160012.png)
+
+
+#### Inventory
+
+When using `MasterCharacterCreator` together with `Master InventoryEnginePro`, you will find a section called **`Master Character Creator Appearance`** in the item settings:
+
+![](../../../static/img/20260423-162342.png)
+
+Click **`Create Mesh Binding`** to associate an appearance model with the item. You can also customize the model’s color directly within this section:
+
+![](../../../static/img/20260435-163501.png)
+
+To apply these appearance changes when this item is equipped at runtime, register a callback for equipment changes on the player:
+
+```csharp
+public CharacterEntity Player; //player CharacterEntity component.
+
+void Start(){
+   ItemObject.PlayerEquipmentData.RegisterItemChangeCallback(OnEuqipmentItemChange);//Register callback for player's equipment
+}
+
+public void OnEuqipmentItemChange(Dictionary<Item, int> _changedItems)
+{
+   foreach (var _item in _changedItems.Keys) {
+      if (Player != null)
+      {
+         if (_changedItems[_item] > 0)
+         {
+            Player.Equip(_item.equipAppearance); // Equip the Appearance
+         }
+         else
+         {
+            Player.Unequip(_item.equipAppearance.Type); // Unequip the Appearance
+         }
+      }
+   }
+}
+
+void OnDestroy(){
+   ItemObject.PlayerEquipmentData.UnRegisterItemChangeCallback(OnEuqipmentItemChange);
+}
+
+```
+
 
 ---
 

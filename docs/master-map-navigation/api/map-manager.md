@@ -33,6 +33,12 @@ Retrieve the world-map instance in the canvas.
 
 ---
 
+#### `public static int NavmeshAreaMask = -1`
+
+Specify the area mask of the navmesh agent, use -1 for all areas.
+
+---
+
 #### `public static string SaveFog()`
 
 Convert the current [Fog of War] data into a json string.

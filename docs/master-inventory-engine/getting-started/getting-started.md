@@ -2,22 +2,45 @@
 title: Getting Started 
 ---
 
-1. First of all, make sure you have Unity UI Canvas in your scene. Navigate to **`Project Settings/SoftKitty/Data Settings`** and setup the following databse:
+1. First of all, make sure you have Unity UI `Canvas` in your scene. Navigate to **`Project Settings/SoftKitty/Data Settings`** and setup the following databse:
    - [ItemObject], refer to the [Item Database Settings]
    - [AttributeObject]
    - [EntityManagerObject] 
-   
----
 
-2. Add [EntityComponent] component to of your player game object. This component is an interface of the [Entity] data, which manages [Attribute]s, [Item]s, [OverTimeEffect]s and other [CustomData] of your characters/crates.
-
----
-
-3. **(Optional)** Drag the **ActionBar** prefab from the `Assets/SoftKitty/InventoryEngine/Prefabs` folder and place it under your **UI Canvas** transform. This prefab provides 10 shortcut slots with customizable key bindings for items/skills on each page, and you can set up as many pages as needed for players to switch between. The action bar also includes a progress bar at the bottom, which can be configured as a player XP bar to display experience and level, or as a player health bar. Alternatively, you can hide this bar using its **UiStyle** component. 
+   **Important**: After creating the databases, you must initialize some basic data:
+   - Open `SubData - Attributes` and add at least one [Attribute] (e.g. Health, Attack)
+   - Open `SubData - Items` and add:
+      - At least one `Currency`
+      - A few [Item]s for testing
 
 ---
 
-4. You can now start testing some basic functions. In your own script, use the following calls:  
+2. Set up your player entity data:
+
+   - Navigate to `Project Settings > SoftKitty > Entity Manager`
+   - Click `Add New Entity`
+   - Assign a `UID` for player by clicking `Set As Player`
+
+   Then configure the player inventory:
+
+   - In the [InventoryModule], click the **`+`** button
+   - Add two inventories:
+     - Type: `Player Inventory`
+     - Type: `Player Equipment`
+
+   This step is required for `inventory` and `equipment` systems to function correctly.
+
+---
+
+3. Add [EntityComponent] component to of your player game object. This component is an interface of the [Entity] data, which manages [Attribute]s, [Item]s, [OverTimeEffect]s and other [CustomData] of your characters/crates.
+
+---
+
+4. **(Optional)** Drag the **ActionBar** prefab from the `Assets/SoftKitty/InventoryEngine/Prefabs` folder and place it under your **UI Canvas** transform. This prefab provides 10 shortcut slots with customizable key bindings for items/skills on each page, and you can set up as many pages as needed for players to switch between. The action bar also includes a progress bar at the bottom, which can be configured as a player XP bar to display experience and level, or as a player health bar. Alternatively, you can hide this bar using its **UiStyle** component. 
+
+---
+
+5. You can now start testing some basic functions. In your own script, use the following calls:  
 
 ```csharp
 //to open the player's inventory.
@@ -32,17 +55,17 @@ GameManager.GetPlayer().GetModule<InventoryModule>().GetInventory().OpenWindowBy
 
 ---
 
-5. Now, let's add some more interesting functions. Add an [Entity] in [EntityManagerObject] from the `Project Settings/SoftKitty/Entity Manager`, input its uid as  **MerchantNPC**, add a new 'Inventory' to it and select the `Type` as `Merchant`:
+6. Now, let's add some more interesting functions. Add an [Entity] in [EntityManagerObject] from the `Project Settings/SoftKitty/Entity Manager`, input its uid as  **MerchantNPC**, add a new 'Inventory' to it and select the `Type` as `Merchant`:
 ![](../../../static/img/20260225-142536.png)
 
 ---
 
-6. Let's add a few items to him, and setup the `Price Multiplier`, make sure `Accept all tradeable items` is checked. Don't forget add some currencies to him, otherwise he would not be able to purchase player's goods.
+7. Let's add a few items to him, and setup the `Price Multiplier`, make sure `Accept all tradeable items` is checked. Don't forget add some currencies to him, otherwise he would not be able to purchase player's goods.
 ![](../../../static/img/20260227-142758.png)
 
 ---
 
-7. Now in your script, whenever you want to open the store, simply call:
+8. Now in your script, whenever you want to open the store, simply call:
 
 ```csharp
 GameManager.GetEntity("MerchantNPC").GetModule<InventoryModule>().GetInventory().OpenWindow();
@@ -54,11 +77,11 @@ Alternatively, you can add a [EntityComponent] to one of your NPC character, sel
 
 ---
 
-8. You can create [Entity] in database for any object in your game. When the player interacts with it, call `OpenWindow()` to open the corresponding interface. The specific interface that appears depends on the **Type** setting of the [InventoryData]. In steps 4 and 5, we tested most types of [InventoryData]. Now, let's test the last one. Create an [Entity] and set its `Inventory` type as `Crate`. When the player interacts with it, call `OpenWindow()` to display the crate UI. 
+9. You can create [Entity] in database for any object in your game. When the player interacts with it, call `OpenWindow()` to open the corresponding interface. The specific interface that appears depends on the **Type** setting of the [InventoryData]. In steps 4 and 5, we tested most types of [InventoryData]. Now, let's test the last one. Create an [Entity] and set its `Inventory` type as `Crate`. When the player interacts with it, call `OpenWindow()` to display the crate UI. 
 
 ---
 
-9. If your game includes [Loot Pack] that players can obtain from defeating monsters or completing quests, you can use the **Loot Pack Settings** in **Project Settings/SoftKitty/SubData - Items**. After setup the [Loot Pack], there're two ways to drop a [Loot Pack]:
+10. If your game includes [Loot Pack] that players can obtain from defeating monsters or completing quests, you can use the **Loot Pack Settings** in **Project Settings/SoftKitty/SubData - Items**. After setup the [Loot Pack], there're two ways to drop a [Loot Pack]:
 Directly drop via uid of the [Loot Pack]:
 
 ```csharp
@@ -78,11 +101,11 @@ var _loot = GameManager.GetEntityInstance("Monster01").GetModule<InventoryModule
 
 ---
 
-10.  Check `MainMenu.cs` in **Assets/SoftKitty/InventoryEngine/ExampleScene/Scripts** to learn how to setup [Callbacks] for player uses, equips, or unequips an item. You can also learn how to save/load data, assign crafting tasks to NPCs, and manage NPC equipment and inventory.  
+11.  Check `MainMenu.cs` in **Assets/SoftKitty/InventoryEngine/ExampleScene/Scripts** to learn how to setup [Callbacks] for player uses, equips, or unequips an item. You can also learn how to save/load data, assign crafting tasks to NPCs, and manage NPC equipment and inventory.  
 
 ---
 
-11. Now that we've walked through all the pre-made interfaces, you can easily create your own by customizing the existing prefabs in the **Assets/SoftKitty/InventoryEngine/Resources/InventoryEngine/UiWindows** folder. Adjust the settings in the **UiStyle** component on each prefab to suit your needs. Alternatively, you can write your own script by inheriting from `ItemContainer.cs`, `ContainerBase.cs`, or `HiddenContainer.cs`.
+12. Now that we've walked through all the pre-made interfaces, you can easily create your own by customizing the existing prefabs in the **Assets/SoftKitty/InventoryEngine/Resources/InventoryEngine/UiWindows** folder. Adjust the settings in the **UiStyle** component on each prefab to suit your needs. Alternatively, you can write your own script by inheriting from `ItemContainer.cs`, `ContainerBase.cs`, or `HiddenContainer.cs`.
 
 ---
 
