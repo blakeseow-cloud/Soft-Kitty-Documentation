@@ -29,7 +29,7 @@ In `Project Settings > SoftKitty > Health Bar System`:
 
 ## 2) Bind Bar Attributes
 
-Open [Bar Settings] and map the following fields to your Attribute UID entries:
+Open [BarSettings] and map the following fields to your Attribute UID entries:
 
 - `Current Value Attribute`
 - `Max Value Attribute`
@@ -73,11 +73,11 @@ To render Over-time Effect icons on bars:
 
 <!-- API LINKS -->
 [BarSetting]: /docs/master-gpu-healthbar/settings/bar-settings
-[Bar Settings]: /docs/master-gpu-healthbar/settings/bar-settings
-[Floating Combat Text Settings]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
-[Floating Combat Text Setting]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
-[Overhead Settings]: /docs/master-gpu-healthbar/settings/overhead-settings
-[Overhead Setting]: /docs/master-gpu-healthbar/settings/overhead-settings
+[BarSettings]: /docs/master-gpu-healthbar/settings/bar-settings
+[FloatingCombatTextSettings]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
+[FloatingCombatTextSetting]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
+[OverheadSettings]: /docs/master-gpu-healthbar/settings/overhead-settings
+[OverheadSetting]: /docs/master-gpu-healthbar/settings/overhead-settings
 [HealthBarObject]: /docs/master-gpu-healthbar/settings/overview
 [Font]: /docs/master-gpu-healthbar/customize-font
 [Bar Style]: /docs/master-gpu-healthbar/customize-healthbar

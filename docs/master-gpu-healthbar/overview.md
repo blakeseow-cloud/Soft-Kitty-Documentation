@@ -39,7 +39,7 @@ It renders bar visuals through a shader-driven workflow with pooling-first runti
 - Start here: [Installation](/docs/master-gpu-healthbar/getting-started/installation)
 - Runtime setup: [/getting-started/getting-started](/docs/master-gpu-healthbar/getting-started/getting-started)
 - Entity-linked workflow: [Using with EntityManager](/docs/master-gpu-healthbar/getting-started/using-with-entitymanager)
-- Bar parameter details: [Bar Settings]
+- Bar parameter details: [BarSettings]
 - Fixed UI bars: [Static Bar]
 - API reference: [HealthBar], [BarUI], [HealthBarManager], [HealthBarCanvas]
 
@@ -47,11 +47,11 @@ It renders bar visuals through a shader-driven workflow with pooling-first runti
 
 <!-- API LINKS -->
 [BarSetting]: /docs/master-gpu-healthbar/settings/bar-settings
-[Bar Settings]: /docs/master-gpu-healthbar/settings/bar-settings
-[Floating Combat Text Settings]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
-[Floating Combat Text Setting]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
-[Overhead Settings]: /docs/master-gpu-healthbar/settings/overhead-settings
-[Overhead Setting]: /docs/master-gpu-healthbar/settings/overhead-settings
+[BarSettings]: /docs/master-gpu-healthbar/settings/bar-settings
+[FloatingCombatTextSettings]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
+[FloatingCombatTextSetting]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
+[OverheadSettings]: /docs/master-gpu-healthbar/settings/overhead-settings
+[OverheadSetting]: /docs/master-gpu-healthbar/settings/overhead-settings
 [HealthBarObject]: /docs/master-gpu-healthbar/settings/overview
 [Font]: /docs/master-gpu-healthbar/customize-font
 [Bar Style]: /docs/master-gpu-healthbar/customize-healthbar

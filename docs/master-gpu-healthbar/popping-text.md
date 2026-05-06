@@ -9,7 +9,7 @@ title: Popping Text
 ## Popping Text
 
 `Popping Text` is the runtime floating combat text feedback used for damage/heal numbers.
-It is configured from [Floating Combat Text Settings] and displayed by bar runtime modules.
+It is configured from [FloatingCombatTextSettings] and displayed by bar runtime modules.
 
 ![](../../static/img/20260508-170846.png)
 
@@ -18,14 +18,14 @@ It is configured from [Floating Combat Text Settings] and displayed by bar runti
 ## Typical Flow
 
 1. Configure one or more floating text styles by UID.
-2. Enable `Show Floating Combat Text` in [Bar Settings] when needed.
+2. Enable `Show Floating Combat Text` in [BarSettings] when needed.
 3. Tune animation curves for speed, arc, scale, and fade.
 
 ---
 
 ## PopNumberText API
 
-`PopNumberText` spawns the floating number using a style `UID` from [Floating Combat Text Settings].
+`PopNumberText` spawns the floating number using a style `UID` from [FloatingCombatTextSettings].
 
 #### World-Space Health Bar (Overhead)
 
@@ -77,11 +77,11 @@ void DealDamage()
 
 <!-- API LINKS -->
 [BarSetting]: /docs/master-gpu-healthbar/settings/bar-settings
-[Bar Settings]: /docs/master-gpu-healthbar/settings/bar-settings
-[Floating Combat Text Settings]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
-[Floating Combat Text Setting]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
-[Overhead Settings]: /docs/master-gpu-healthbar/settings/overhead-settings
-[Overhead Setting]: /docs/master-gpu-healthbar/settings/overhead-settings
+[BarSettings]: /docs/master-gpu-healthbar/settings/bar-settings
+[FloatingCombatTextSettings]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
+[FloatingCombatTextSetting]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
+[OverheadSettings]: /docs/master-gpu-healthbar/settings/overhead-settings
+[OverheadSetting]: /docs/master-gpu-healthbar/settings/overhead-settings
 [HealthBarObject]: /docs/master-gpu-healthbar/settings/overview
 [Font]: /docs/master-gpu-healthbar/customize-font
 [Bar Style]: /docs/master-gpu-healthbar/customize-healthbar

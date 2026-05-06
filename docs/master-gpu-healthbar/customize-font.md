@@ -105,7 +105,7 @@ In addition to digits, the font atlas supports these symbols:
 - `Star`
 - `Skull`
 
-These symbols are useful when formatting health text through the `Value Format` field in [Bar Settings].
+These symbols are useful when formatting health text through the `Value Format` field in [BarSettings].
 
 ---
 
@@ -115,8 +115,8 @@ These symbols are useful when formatting health text through the `Value Format` 
 2. Edit the atlas while preserving the original cell layout.
 3. Save the new texture as `Font#.png` in the correct folder.
 4. Return to the project and select the new font ID in:
-   - [Bar Settings] for bar value text
-   - [Floating Combat Text Settings] for popping number text
+   - [BarSettings] for bar value text
+   - [FloatingCombatTextSettings] for popping number text
 
 ---
 
@@ -132,18 +132,18 @@ These symbols are useful when formatting health text through the `Value Format` 
 
 ## Related Settings
 
-- Use [Bar Settings] to choose the font for bar value text.
-- Use [Floating Combat Text Settings] to choose the font for floating combat text.
+- Use [BarSettings] to choose the font for bar value text.
+- Use [FloatingCombatTextSettings] to choose the font for floating combat text.
 
 ---
 
 <!-- API LINKS -->
 [BarSetting]: /docs/master-gpu-healthbar/settings/bar-settings
-[Bar Settings]: /docs/master-gpu-healthbar/settings/bar-settings
-[Floating Combat Text Settings]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
-[Floating Combat Text Setting]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
-[Overhead Settings]: /docs/master-gpu-healthbar/settings/overhead-settings
-[Overhead Setting]: /docs/master-gpu-healthbar/settings/overhead-settings
+[BarSettings]: /docs/master-gpu-healthbar/settings/bar-settings
+[FloatingCombatTextSettings]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
+[FloatingCombatTextSetting]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
+[OverheadSettings]: /docs/master-gpu-healthbar/settings/overhead-settings
+[OverheadSetting]: /docs/master-gpu-healthbar/settings/overhead-settings
 [HealthBarObject]: /docs/master-gpu-healthbar/settings/overview
 [Font]: /docs/master-gpu-healthbar/customize-font
 [Bar Style]: /docs/master-gpu-healthbar/customize-healthbar

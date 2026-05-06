@@ -9,7 +9,7 @@ title: Customize Health Bar
 ## Customize Health Bar
 
 You can create your own custom bar texture atlases for all supported bar styles.
-Once a texture is placed in the correct `Resources` folder and follows the expected naming and layout rules, it can be selected directly from [Bar Settings].
+Once a texture is placed in the correct `Resources` folder and follows the expected naming and layout rules, it can be selected directly from [BarSettings].
 
 ---
 
@@ -92,7 +92,7 @@ The texture is split from bottom to top into these layers:
 
 ![](../../static/img/20260505-170548.png)
 
-The width is flexible, but the bar size you use in [Bar Settings] and [Overhead Settings] should match the texture's aspect ratio for the best visual result.
+The width is flexible, but the bar size you use in [BarSettings] and [OverheadSettings] should match the texture's aspect ratio for the best visual result.
 
 ### Settings File
 
@@ -213,7 +213,7 @@ Ball bars do **not** need a `_Setting.txt` file.
 3. Redesign the atlas while preserving the required layout.
 4. Save it using the correct name in the `BarStyles` folder.
 5. If the style is `Classical` or `Segment`, create the matching `_Setting.txt` file.
-6. Open [Bar Settings] and select the new style ID from the matching bar type.
+6. Open [BarSettings] and select the new style ID from the matching bar type.
 7. Test the bar in preview and in gameplay to confirm alignment, text placement, and effect behavior.
 
 ---
@@ -231,18 +231,18 @@ Ball bars do **not** need a `_Setting.txt` file.
 
 ## Related Pages
 
-- Use [Bar Settings] to choose the custom bar style.
+- Use [BarSettings] to choose the custom bar style.
 - Use [Customize Font] if you also want to replace the value text texture.
 
 ---
 
 <!-- API LINKS -->
 [BarSetting]: /docs/master-gpu-healthbar/settings/bar-settings
-[Bar Settings]: /docs/master-gpu-healthbar/settings/bar-settings
-[Floating Combat Text Settings]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
-[Floating Combat Text Setting]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
-[Overhead Settings]: /docs/master-gpu-healthbar/settings/overhead-settings
-[Overhead Setting]: /docs/master-gpu-healthbar/settings/overhead-settings
+[BarSettings]: /docs/master-gpu-healthbar/settings/bar-settings
+[FloatingCombatTextSettings]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
+[FloatingCombatTextSetting]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
+[OverheadSettings]: /docs/master-gpu-healthbar/settings/overhead-settings
+[OverheadSetting]: /docs/master-gpu-healthbar/settings/overhead-settings
 [HealthBarObject]: /docs/master-gpu-healthbar/settings/overview
 [Font]: /docs/master-gpu-healthbar/customize-font
 [Bar Style]: /docs/master-gpu-healthbar/customize-healthbar

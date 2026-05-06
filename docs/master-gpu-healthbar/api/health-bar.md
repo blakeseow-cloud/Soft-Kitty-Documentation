@@ -84,7 +84,7 @@ Returns the created `BarUI` instance for a specific index.
 
 ### `void SetAvatar(Texture _texture)`
 
-Sets the avatar texture when `Show Avatar` is enabled in [Overhead Settings].
+Sets the avatar texture when `Show Avatar` is enabled in [OverheadSettings].
 
 ---
 
@@ -130,7 +130,7 @@ void Update()
 ## Common Usage Notes
 
 - Add this component to the character prefab root.
-- Assign a valid `OverheadUID` created in [Overhead Settings].
+- Assign a valid `OverheadUID` created in [OverheadSettings].
 - In EntityManager mode, add `EntityComponent` on the same GameObject.
 - Use `Visible` to show or hide the entire overhead UI.
 - Use `PopNumberText()` for world-space overhead bars. For static bars, call `BarUI.PopNumberText()` instead.
@@ -139,11 +139,11 @@ void Update()
 
 <!-- API LINKS -->
 [BarSetting]: /docs/master-gpu-healthbar/settings/bar-settings
-[Bar Settings]: /docs/master-gpu-healthbar/settings/bar-settings
-[Floating Combat Text Settings]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
-[Floating Combat Text Setting]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
-[Overhead Settings]: /docs/master-gpu-healthbar/settings/overhead-settings
-[Overhead Setting]: /docs/master-gpu-healthbar/settings/overhead-settings
+[BarSettings]: /docs/master-gpu-healthbar/settings/bar-settings
+[FloatingCombatTextSettings]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
+[FloatingCombatTextSetting]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
+[OverheadSettings]: /docs/master-gpu-healthbar/settings/overhead-settings
+[OverheadSetting]: /docs/master-gpu-healthbar/settings/overhead-settings
 [HealthBarObject]: /docs/master-gpu-healthbar/settings/overview
 [Font]: /docs/master-gpu-healthbar/customize-font
 [Bar Style]: /docs/master-gpu-healthbar/customize-healthbar

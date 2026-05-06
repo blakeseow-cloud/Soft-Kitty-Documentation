@@ -39,7 +39,7 @@ Use this when your character data already comes from [EntityManagerObject], [Att
 
 - Enable `Use SoftKitty EntityManager and Attributes` in `Module Setting`.
 - Enable `Use SoftKitty Over Time Effect` in `Over-time Effect Setting`.
-- Configure bar-to-attribute binding in [Bar Settings].
+- Configure bar-to-attribute binding in [BarSettings].
 - Add [EntityComponent] and [HealthBar] on the same character object.
 
 See full guide: [Using with EntityManager](/docs/master-gpu-healthbar/getting-started/using-with-entitymanager)
@@ -56,7 +56,7 @@ Use this when you do not want to depend on SoftKitty shared data objects.
 
 ## Step 3 - Assign and Preview
 
-1. Create one or more bar presets in [Bar Settings].
+1. Create one or more bar presets in [BarSettings].
    - Each preset must have a unique `UID`.
    - Configure value mapping using `Current/Max/Overlay/Overlay Max Value Attribute` (only needed in Entity-linked mode).
 
@@ -64,7 +64,7 @@ Use this when you do not want to depend on SoftKitty shared data objects.
 
 ---
 
-2. Create one or more overhead presets in [Overhead Settings].
+2. Create one or more overhead presets in [OverheadSettings].
    - Each overhead preset must have a unique `Overhead UID`.
    - Set `Main Bar (idx:0)` to reference the bar preset you want to use for the primary bar.
    - Optionally configure `Sub Bars` for extra layers/resources.
@@ -118,19 +118,19 @@ Use this when you do not want to depend on SoftKitty shared data objects.
 
 - [Assign Health Bar](/docs/master-gpu-healthbar/assign-healthbar)
 - [Static Bar](/docs/master-gpu-healthbar/static-healthbar)
-- [Bar Settings]
-- [Floating Combat Text Settings]
-- [Overhead Settings]
+- [BarSettings]
+- [FloatingCombatTextSettings]
+- [OverheadSettings]
 
 ---
 
 <!-- API LINKS -->
 [BarSetting]: /docs/master-gpu-healthbar/settings/bar-settings
-[Bar Settings]: /docs/master-gpu-healthbar/settings/bar-settings
-[Floating Combat Text Settings]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
-[Floating Combat Text Setting]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
-[Overhead Settings]: /docs/master-gpu-healthbar/settings/overhead-settings
-[Overhead Setting]: /docs/master-gpu-healthbar/settings/overhead-settings
+[BarSettings]: /docs/master-gpu-healthbar/settings/bar-settings
+[FloatingCombatTextSettings]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
+[FloatingCombatTextSetting]: /docs/master-gpu-healthbar/settings/floating-combat-text-settings
+[OverheadSettings]: /docs/master-gpu-healthbar/settings/overhead-settings
+[OverheadSetting]: /docs/master-gpu-healthbar/settings/overhead-settings
 [HealthBarObject]: /docs/master-gpu-healthbar/settings/overview
 [Font]: /docs/master-gpu-healthbar/customize-font
 [Bar Style]: /docs/master-gpu-healthbar/customize-healthbar
