@@ -305,6 +305,7 @@ const sidebars = {
         'master-gpu-healthbar/customize-healthbar',
         'master-gpu-healthbar/customize-font',
         'master-gpu-healthbar/popping-text',
+        'master-gpu-healthbar/effects',
         'master-gpu-healthbar/performance',
         {
             type: 'category',

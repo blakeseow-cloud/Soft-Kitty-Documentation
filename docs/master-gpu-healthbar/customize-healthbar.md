@@ -159,19 +159,7 @@ As with other bar types, all layers must be aligned to the same graphic position
 
 ### Settings File
 
-A segment bar requires a matching settings file with a single value:
-
-- `Normalized left padding of the graphic`
-
-Example:
-
-If the graphic starts `8 px` from the left edge of a `64 px` texture:
-
-`8 / 64 = 0.125`
-
-So the settings file should contain:
-
-`0.125`
+Segment bars do **not** need a `_Setting.txt` file.
 
 ---
 
