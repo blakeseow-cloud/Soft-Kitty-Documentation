@@ -37,7 +37,7 @@ It renders bar visuals through a shader-driven workflow with pooling-first runti
 ## Documentation Map
 
 - Start here: [Installation](/docs/master-gpu-healthbar/getting-started/installation)
-- Runtime setup: [/getting-started/getting-started](/docs/master-gpu-healthbar/getting-started/getting-started)
+- Runtime setup: [Getting-Started](/docs/master-gpu-healthbar/getting-started)
 - Entity-linked workflow: [Using with EntityManager](/docs/master-gpu-healthbar/getting-started/using-with-entitymanager)
 - Bar parameter details: [BarSettings]
 - Fixed UI bars: [Static Bar]
