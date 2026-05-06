@@ -276,6 +276,48 @@ const sidebars = {
       ],
     },
 
+    {
+      type: 'category',
+      label: 'Master GPU HealthBar',
+      items: [
+        'master-gpu-healthbar/overview',
+         {
+            type: 'category',
+            label: 'Getting-Started',
+            items: [
+             'master-gpu-healthbar/getting-started/installation',
+             'master-gpu-healthbar/getting-started/getting-started',
+             'master-gpu-healthbar/getting-started/using-with-entitymanager',
+           ],
+        },
+        {
+            type: 'category',
+            label: 'Settings',
+            items: [
+             'master-gpu-healthbar/settings/overview',
+             'master-gpu-healthbar/settings/bar-settings',
+             'master-gpu-healthbar/settings/floating-combat-text-settings',
+             'master-gpu-healthbar/settings/overhead-settings',
+           ],
+        },
+        'master-gpu-healthbar/assign-healthbar',
+        'master-gpu-healthbar/static-healthbar',
+        'master-gpu-healthbar/customize-healthbar',
+        'master-gpu-healthbar/customize-font',
+        'master-gpu-healthbar/popping-text',
+        'master-gpu-healthbar/performance',
+        {
+            type: 'category',
+            label: 'Api',
+            items: [
+             'master-gpu-healthbar/api/health-bar',
+             'master-gpu-healthbar/api/bar-ui',
+             'master-gpu-healthbar/api/health-bar-manager',
+             'master-gpu-healthbar/api/health-bar-canvas',
+           ],
+        },
+      ],
+    },
   ],
 };
 
