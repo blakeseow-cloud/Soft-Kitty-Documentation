@@ -35,46 +35,31 @@ This prevents world-to-screen tracking behavior.
 
 ---
 
-## 3) Initialize in Script
+## 3) Select Bar Setting
 
-Call `BarUI.Init(...)` in `Start`:
+Select a [BarSetting] from the dropdown:
 
-```csharp
-public BarUI playerBar;
+![](../../static/img/20260527-132708.png)
 
-void Start()
-{
-    playerBar.Init(null, BarStyle.HealthBall, "DemoPlayer");
-}
-```
+This will visualize the bar based on the setting you selected.
+Click the `Apply Bar Setting` button if you have made any changes for the selected [BarSetting].
 
-Method signature:
-
-```csharp
-public void Init(HealthBar _bar, BarStyle _style, string _barUid, int _index = 0, Vector2 _size = default)
-```
+Please note, each `Static Bar` has its own material, it is located in:
+`Assets/SoftKitty/MasterHealthBarSystem/StaticBarMaterial`
+You can reuse those materials for bars shares the same [BarSetting], and feel free to replace the VFX textures, as worldspace floating bar won't be effected.
 
 ---
 
 ## 4) Optional Entity Binding
 
-If your project uses SoftKitty shared data, bind this static bar to an entity:
+If your project uses SoftKitty shared data, bind this static bar to an entity by selecting an [Entity] from the dropdown:
 
-```csharp
-playerBar.LinkEntity(EntityManagerObject.instance.GetEntity("player"));
-```
-
-Method signature:
-
-```csharp
-public void LinkEntity(Entity _entity)
-```
+![](../../static/img/20260533-133305.png)
 
 ---
 
 ## Common Notes
 
-- For standalone mode, skip `LinkEntity(...)` and drive values manually.
 - Keep bar UIDs aligned with entries in [BarSettings].
 - You can create separate static bars for HP, shield, boss HP, or party status.
 
