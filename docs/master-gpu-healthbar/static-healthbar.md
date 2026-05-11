@@ -19,6 +19,9 @@ From:
 `Assets/SoftKitty/MasterHealthBarSystem/Prefabs`
 
 Choose the desired bar style prefab and place it under your scene Canvas.
+Make sure the **parent** GameObject of the static bars has a **Canvas** component that enabled `TexCoord1` and `TexCoord2`
+
+![](../../static/img/20260518-101832.png)
 
 ---
 
