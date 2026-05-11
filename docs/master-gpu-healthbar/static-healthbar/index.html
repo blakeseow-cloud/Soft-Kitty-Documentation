@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Static Health Bar | Soft Kitty Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://www.soft-kitty.com/img/SoftKitty-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://www.soft-kitty.com/img/SoftKitty-social-card.jpg"><meta data-rh="true" property="og:url" content="https://www.soft-kitty.com/docs/master-gpu-healthbar/static-healthbar"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Static Health Bar | Soft Kitty Documentation"><meta data-rh="true" name="description" content="---"><meta data-rh="true" property="og:description" content="---"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://www.soft-kitty.com/docs/master-gpu-healthbar/static-healthbar"><link data-rh="true" rel="alternate" href="https://www.soft-kitty.com/docs/master-gpu-healthbar/static-healthbar" hreflang="en"><link data-rh="true" rel="alternate" href="https://www.soft-kitty.com/docs/master-gpu-healthbar/static-healthbar" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Static Health Bar","item":"https://www.soft-kitty.com/docs/master-gpu-healthbar/static-healthbar"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Soft Kitty Documentation RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Soft Kitty Documentation Atom Feed"><link rel="stylesheet" href="/assets/css/styles.3ddff679.css">
-<script src="/assets/js/runtime~main.928ca687.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.0048948d.js" defer="defer"></script>
 <script src="/assets/js/main.483c892c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -20,7 +20,9 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-add-a-prefab-to-canvas">1) Add a Prefab to Canvas<a href="#1-add-a-prefab-to-canvas" class="hash-link" aria-label="Direct link to 1) Add a Prefab to Canvas" title="Direct link to 1) Add a Prefab to Canvas" translate="no">​</a></h2>
 <p>From:</p>
 <p><code>Assets/SoftKitty/MasterHealthBarSystem/Prefabs</code></p>
-<p>Choose the desired bar style prefab and place it under your scene Canvas.</p>
+<p>Choose the desired bar style prefab and place it under your scene Canvas.
+Make sure the <strong>parent</strong> GameObject of the static bars has a <strong>Canvas</strong> component that enabled <code>TexCoord1</code> and <code>TexCoord2</code></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/20260518-101832-f65c744a30859315cc564450215af834.png" width="1460" height="267" class="img_ev3q"></p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-enable-static-bar-mode">2) Enable Static Bar Mode<a href="#2-enable-static-bar-mode" class="hash-link" aria-label="Direct link to 2) Enable Static Bar Mode" title="Direct link to 2) Enable Static Bar Mode" translate="no">​</a></h2>
 <p>On the prefab instance, open <a class="" href="/docs/master-gpu-healthbar/api/bar-ui">BarUI</a> and enable:</p>
