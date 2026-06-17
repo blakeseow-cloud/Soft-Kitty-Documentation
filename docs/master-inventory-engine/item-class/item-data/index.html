@@ -5,8 +5,8 @@
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">InventoryData | Soft Kitty Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://www.soft-kitty.com/img/SoftKitty-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://www.soft-kitty.com/img/SoftKitty-social-card.jpg"><meta data-rh="true" property="og:url" content="https://www.soft-kitty.com/docs/master-inventory-engine/item-class/item-data"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="InventoryData | Soft Kitty Documentation"><meta data-rh="true" name="description" content="---"><meta data-rh="true" property="og:description" content="---"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://www.soft-kitty.com/docs/master-inventory-engine/item-class/item-data"><link data-rh="true" rel="alternate" href="https://www.soft-kitty.com/docs/master-inventory-engine/item-class/item-data" hreflang="en"><link data-rh="true" rel="alternate" href="https://www.soft-kitty.com/docs/master-inventory-engine/item-class/item-data" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"InventoryData","item":"https://www.soft-kitty.com/docs/master-inventory-engine/item-class/item-data"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Soft Kitty Documentation RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Soft Kitty Documentation Atom Feed"><link rel="stylesheet" href="/assets/css/styles.3ddff679.css">
-<script src="/assets/js/runtime~main.2adc126f.js" defer="defer"></script>
-<script src="/assets/js/main.483c892c.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.cfa7660a.js" defer="defer"></script>
+<script src="/assets/js/main.f7eaad8e.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -23,6 +23,9 @@
 <hr>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-entity-mentity"><code>public </code><a class="" href="/docs/core/entities/Entity">Entity</a><code> mEntity</code><a href="#public-entity-mentity" class="hash-link" aria-label="Direct link to public-entity-mentity" title="Direct link to public-entity-mentity" translate="no">​</a></h4>
 <p>The owner <a class="" href="/docs/core/entities/Entity">Entity</a> of this InventoryData.</p>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-bool-isdirty"><code>public bool isDirty</code><a href="#public-bool-isdirty" class="hash-link" aria-label="Direct link to public-bool-isdirty" title="Direct link to public-bool-isdirty" translate="no">​</a></h4>
+<p>Retrieves whether this Invetory has been modified, a save action from EntityManager will clear this flag.</p>
 <hr>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-listinventorystack-stacks"><code>public List&lt;</code><a class="" href="/docs/master-inventory-engine/item-class/inventory-stack">InventoryStack</a><code>&gt; Stacks</code><a href="#public-listinventorystack-stacks" class="hash-link" aria-label="Direct link to public-listinventorystack-stacks" title="Direct link to public-listinventorystack-stacks" translate="no">​</a></h4>
 <p>The list of <a class="" href="/docs/master-inventory-engine/item-class/inventory-stack">InventoryStack</a> objects. All normal items are stored here.</p>
@@ -41,6 +44,12 @@
 <hr>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-float-maxiumcarryweight"><code>public float MaxiumCarryWeight</code><a href="#public-float-maxiumcarryweight" class="hash-link" aria-label="Direct link to public-float-maxiumcarryweight" title="Direct link to public-float-maxiumcarryweight" translate="no">​</a></h4>
 <p>The maximum carry weight for this InventoryData.</p>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-liststring-onlyaccepttags--new-liststring"><code>public List&lt;string&gt; OnlyAcceptTags = new List&lt;string&gt;();</code><a href="#public-liststring-onlyaccepttags--new-liststring" class="hash-link" aria-label="Direct link to public-liststring-onlyaccepttags--new-liststring" title="Direct link to public-liststring-onlyaccepttags--new-liststring" translate="no">​</a></h4>
+<p>If this list is non-empty, this inventory will only accept items with the tag in the list.</p>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-listint-onlyacceptcategories--new-listint"><code>public List&lt;int&gt; OnlyAcceptCategories = new List&lt;int&gt;();</code><a href="#public-listint-onlyacceptcategories--new-listint" class="hash-link" aria-label="Direct link to public-listint-onlyacceptcategories--new-listint" title="Direct link to public-listint-onlyacceptcategories--new-listint" translate="no">​</a></h4>
+<p>If this list is non-empty, this inventory will only accept items of the category(ID) in the list.</p>
 <hr>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-float-sellpricemultiplie"><code>public float SellPriceMultiplie</code><a href="#public-float-sellpricemultiplie" class="hash-link" aria-label="Direct link to public-float-sellpricemultiplie" title="Direct link to public-float-sellpricemultiplie" translate="no">​</a></h4>
 <p>This multiplier is applied when selling items. For example, a merchant NPC with a SellPriceMultiplier of 1.2 will sell an <a class="" href="/docs/master-inventory-engine/item-class/item">Item</a> priced at 1000 for 1200.</p>
@@ -71,6 +80,9 @@
 <hr>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-bool-craftingfailed"><code>public bool CraftingFailed</code><a href="#public-bool-craftingfailed" class="hash-link" aria-label="Direct link to public-bool-craftingfailed" title="Direct link to public-bool-craftingfailed" translate="no">​</a></h4>
 <p>Returns true if the crafting failed.</p>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-bool-isitemacceptableitem-_item"><code>public bool isItemAcceptable(Item _item)</code><a href="#public-bool-isitemacceptableitem-_item" class="hash-link" aria-label="Direct link to public-bool-isitemacceptableitem-_item" title="Direct link to public-bool-isitemacceptableitem-_item" translate="no">​</a></h4>
+<p>Retrieves whether an item is acceptable by this inventory, the tag and category filter of this inventory will be applied to the result.</p>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="methods">Methods<a href="#methods" class="hash-link" aria-label="Direct link to Methods" title="Direct link to Methods" translate="no">​</a></h3>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-static-inventorydata-getinventorydatabytypeentity_entity-holdertype-_type"><code>public static InventoryData GetInventoryDataByType(</code><a class="" href="/docs/core/entities/Entity">Entity</a><code>_entity, HolderType _type)</code><a href="#public-static-inventorydata-getinventorydatabytypeentity_entity-holdertype-_type" class="hash-link" aria-label="Direct link to public-static-inventorydata-getinventorydatabytypeentity_entity-holdertype-_type" title="Direct link to public-static-inventorydata-getinventorydatabytypeentity_entity-holdertype-_type" translate="no">​</a></h4>
