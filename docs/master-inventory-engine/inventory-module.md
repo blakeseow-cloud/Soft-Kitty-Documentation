@@ -50,6 +50,11 @@ Retrieve any exitsing [InventoryData] of this [Entity] when available.
 
 ---
 
+#### `public InventoryEngine.`[InventoryData]` GetInventoryDataByName(string _name)`
+Retrieve an [InventoryData] of this [Entity] by its name.(_case-sensitive_).
+
+---
+
 #### `public InventoryEngine.`[InventoryData]` GetEquipment()`
 Retrieve any exitsing Equipment type [InventoryData] of this [Entity] when available.
 

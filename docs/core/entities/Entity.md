@@ -52,6 +52,11 @@ A 'MultipleInstances' Entity will no longer be one to one connection with [Entit
 
 ---
 
+#### `public bool isDirty`
+Retrieves whether this Entity has been modified, a save action from [EntityManager] will clear this flag.
+
+---
+
 #### `public List<`[AttributeData]`> Attributes`
 A list of attribute data associated with this entity.
 

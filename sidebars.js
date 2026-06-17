@@ -70,6 +70,7 @@ const sidebars = {
           ],
         },
          "core/CustomData",
+         "core/SaveLoad",
       ],
     },
 

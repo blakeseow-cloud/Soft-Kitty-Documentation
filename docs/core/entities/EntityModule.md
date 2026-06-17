@@ -127,6 +127,16 @@ The core [attribute] system will query modules when calculating final [attribute
 
 Each module is responsible for saving and loading its own data.
 
+
+```csharp
+public virtual bool isDirty{
+    return ...;
+}
+```
+
+This returns whether this module data has been modified during runtime.
+
+
 #### Save module data
 
 ```csharp

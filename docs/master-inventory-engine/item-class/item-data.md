@@ -26,6 +26,11 @@ The owner [Entity] of this InventoryData.
 
 ---
 
+#### `public bool isDirty`
+Retrieves whether this Invetory has been modified, a save action from EntityManager will clear this flag.
+
+---
+
 
 #### `public List<`[InventoryStack]`> Stacks` 
 The list of [InventoryStack] objects. All normal items are stored here. 
@@ -54,6 +59,16 @@ The size of the Stacks. Items will be rejected if the inventory is full.
 
 #### `public float MaxiumCarryWeight` 
 The maximum carry weight for this InventoryData. 
+
+---
+
+#### `public List<string> OnlyAcceptTags = new List<string>();` 
+If this list is non-empty, this inventory will only accept items with the tag in the list.
+
+---
+
+#### `public List<int> OnlyAcceptCategories = new List<int>();` 
+If this list is non-empty, this inventory will only accept items of the category(ID) in the list.
 
 ---
 
@@ -104,6 +119,11 @@ Returns the crafting progress(0~1).
 
 #### `public bool CraftingFailed`
 Returns true if the crafting failed.
+
+---
+
+#### `public bool isItemAcceptable(Item _item)`
+Retrieves whether an item is acceptable by this inventory, the tag and category filter of this inventory will be applied to the result.
 
 ---
 
